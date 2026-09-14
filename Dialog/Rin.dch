@@ -1,0 +1,67 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "Default",
+&"description": "",
+&"display_name": "Rin",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"Battle": {
+"export_overrides": {
+"image": "\"res://Assets/Characterpotraits/Rin/Rinbattle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Default": {
+"export_overrides": {
+"image": "\"res://Assets/Characterpotraits/Rin/Rindefault.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Detective": {
+"export_overrides": {
+"image": "\"res://Assets/Characterpotraits/Rin/Rinspecial.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Disgust": {
+"export_overrides": {
+"image": "\"res://Assets/Characterpotraits/Rin/Rindisgust.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Smug": {
+"export_overrides": {
+"image": "\"res://Assets/Characterpotraits/Rin/Rinsmug.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

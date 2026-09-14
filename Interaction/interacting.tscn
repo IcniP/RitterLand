@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://co3jmdrkfq2wv"]
+
+[ext_resource type="Script" uid="uid://dwsxrfnaorvfj" path="res://Interaction/interacting.gd" id="1_giqid"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 36.05551
+
+[sub_resource type="LabelSettings" id="LabelSettings_13qdw"]
+
+[node name="interactingComponent" type="Node2D" unique_id=1292328715]
+script = ExtResource("1_giqid")
+
+[node name="interactrange" type="Area2D" parent="." unique_id=1822396918]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactrange" unique_id=1718187398]
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="InteractLabel" type="Label" parent="interactrange" unique_id=1867327954]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -61.0
+offset_right = 32.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "E To Talk"
+label_settings = SubResource("LabelSettings_13qdw")
+
+[connection signal="area_entered" from="interactrange" to="." method="_on_interactrange_area_entered"]
+[connection signal="area_exited" from="interactrange" to="." method="_on_interactrange_area_exited"]

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://ghtp0b56j8fa"]
+
+[ext_resource type="Texture2D" uid="uid://t8xhtu0xhrud" path="res://Assets/Lan.png" id="1_5mc1r"]
+[ext_resource type="Script" uid="uid://chjv17ritj2v5" path="res://lan.gd" id="1_bd7iu"]
+[ext_resource type="PackedScene" uid="uid://bwcd1kbtf52n5" path="res://Interaction/interactable.tscn" id="2_gavoj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gavoj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5mc1r")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5mc1r"]
+radius = 3.0
+height = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(11, 27)
+
+[node name="Lan" type="CharacterBody2D" unique_id=1647031635]
+script = ExtResource("1_bd7iu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917613744]
+position = Vector2(-10.000001, -9)
+scale = Vector2(0.796875, 0.796875)
+sprite_frames = SubResource("SpriteFrames_gavoj")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2106651628]
+position = Vector2(-10, -10)
+shape = SubResource("CapsuleShape2D_5mc1r")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=129654562]
+
+[node name="Interactable" parent="." unique_id=448473744 instance=ExtResource("2_gavoj")]
+interact_name = "Press E To Talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=15575288]
+position = Vector2(-10, -1)
+shape = SubResource("RectangleShape2D_13qdw")
