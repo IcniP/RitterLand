@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bb1svdgj2jlb6"]
 
+[ext_resource type="Script" uid="uid://ctrgpjmjtx0e0" path="res://Scripts/entities/Unit.gd" id="1_dcnx2"]
 [ext_resource type="Texture2D" uid="uid://bjgw4kyhl5als" path="res://Assets/Iliako-Sheet-export.png" id="1_f50pn"]
-[ext_resource type="Script" uid="uid://djgikglcvd3ns" path="res://character_body_2d.gd" id="1_ij6vw"]
 [ext_resource type="PackedScene" uid="uid://co3jmdrkfq2wv" path="res://Interaction/interacting.tscn" id="3_dcnx2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
@@ -228,20 +228,22 @@ height = 49.999996
 [node name="Ilia" type="CharacterBody2D" unique_id=599916813]
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
-script = ExtResource("1_ij6vw")
+script = ExtResource("1_dcnx2")
+is_player_controlled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=966778744]
 y_sort_enabled = true
-position = Vector2(11.999998, 14.999997)
+position = Vector2(0, -9.999998)
 scale = Vector2(0.9999998, 0.9999998)
 sprite_frames = SubResource("SpriteFrames_186t8")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.2480284
+offset = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079425840]
-position = Vector2(15.000004, 30)
+position = Vector2(7.6293945e-06, -34.999996)
 shape = SubResource("CapsuleShape2D_f50pn")
 
 [node name="interactingComponent" parent="." unique_id=1292328715 instance=ExtResource("3_dcnx2")]
-position = Vector2(15, 5.000001)
+position = Vector2(7.6293945e-06, -40)

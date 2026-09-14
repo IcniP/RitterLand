@@ -26,13 +26,13 @@ size = Vector2(11, 27)
 script = ExtResource("1_bd7iu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917613744]
-position = Vector2(-10.000001, -9)
+position = Vector2(-9.536743e-07, -8)
 scale = Vector2(0.796875, 0.796875)
 sprite_frames = SubResource("SpriteFrames_gavoj")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2106651628]
-position = Vector2(-10, -10)
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_5mc1r")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=129654562]
@@ -41,5 +41,5 @@ shape = SubResource("CapsuleShape2D_5mc1r")
 interact_name = "Press E To Talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=15575288]
-position = Vector2(-10, -1)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_13qdw")
