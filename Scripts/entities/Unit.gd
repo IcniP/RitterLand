@@ -17,7 +17,7 @@ var current_mode: ControlMode = ControlMode.EXPLORATION
 var facing_direction: Vector2i = Vector2i.DOWN
 var is_stunned: bool = false
 
-@onready var animated_sprite = $AnimatedSprite2D
+@export var animated_sprite: AnimatedSprite2D
 
 func _physics_process(_delta: float) -> void:
 	# WASD HANYA aktif jika dalam EXPLORATION Mode DAN karakter ini adalah player utama (Lan)
@@ -53,12 +53,20 @@ func take_damage(amount: int) -> void:
 
 func update_animation(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:
-		animated_sprite.play("Idle")
+		match facing_direction:
+			Vector2i.RIGHT:
+				animated_sprite.play("IdleRight")
+			Vector2i.LEFT:
+				animated_sprite.play("IdleLeft")
+			Vector2i.UP:
+				animated_sprite.play("IdleUp") # 
+			Vector2i.DOWN:
+				animated_sprite.play("IdleDown")
 		return
 
 	if abs(direction.x) > abs(direction.y):
 		if direction.x > 0:
-			animated_sprite.play("Walkright")
+			animated_sprite.play("WalkRight")
 			facing_direction = Vector2i.RIGHT
 		else:
 			animated_sprite.play("WalkLeft")
@@ -68,5 +76,5 @@ func update_animation(direction: Vector2) -> void:
 			animated_sprite.play("WalkDown")
 			facing_direction = Vector2i.DOWN
 		else:
-			animated_sprite.play("Walkup")
+			animated_sprite.play("WalkUp")
 			facing_direction = Vector2i.UP

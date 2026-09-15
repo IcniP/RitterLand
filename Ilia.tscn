@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctrgpjmjtx0e0" path="res://Scripts/entities/Unit.gd" id="1_dcnx2"]
 [ext_resource type="Texture2D" uid="uid://bjgw4kyhl5als" path="res://Assets/Iliako-Sheet-export.png" id="1_f50pn"]
-[ext_resource type="PackedScene" uid="uid://co3jmdrkfq2wv" path="res://Interaction/interacting.tscn" id="3_dcnx2"]
+[ext_resource type="PackedScene" uid="uid://bwcd1kbtf52n5" path="res://Interaction/interactable.tscn" id="3_dcnx2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -125,8 +125,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_44cfe")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"IdleDown",
 "speed": 6.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"IdleLeft",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"IdleRight",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"IdleUp",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -194,7 +209,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_73nau")
 }],
 "loop": 1,
-"name": &"Walkright",
+"name": &"WalkRight",
 "speed": 7.0
 }, {
 "frames": [{
@@ -217,7 +232,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jsgy1")
 }],
 "loop": 1,
-"name": &"Walkup",
+"name": &"WalkUp",
 "speed": 7.0
 }]
 
@@ -225,25 +240,32 @@ animations = [{
 radius = 18.0
 height = 49.999996
 
-[node name="Ilia" type="CharacterBody2D" unique_id=599916813]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgx"]
+size = Vector2(60.25, 107.25)
+
+[node name="Ilia" type="CharacterBody2D" unique_id=599916813 node_paths=PackedStringArray("animated_sprite")]
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_dcnx2")
-is_player_controlled = true
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=966778744]
 y_sort_enabled = true
 position = Vector2(0, -9.999998)
 scale = Vector2(0.9999998, 0.9999998)
 sprite_frames = SubResource("SpriteFrames_186t8")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.2480284
+animation = &"IdleDown"
+autoplay = "IdleDown"
 offset = Vector2(0, -32)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079425840]
+[node name="IliaHitbox" type="CollisionShape2D" parent="." unique_id=1079425840]
 position = Vector2(7.6293945e-06, -34.999996)
 shape = SubResource("CapsuleShape2D_f50pn")
 
-[node name="interactingComponent" parent="." unique_id=1292328715 instance=ExtResource("3_dcnx2")]
-position = Vector2(7.6293945e-06, -40)
+[node name="Interactable" parent="." unique_id=448473744 instance=ExtResource("3_dcnx2")]
+interact_name = "Press E To Talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1082399409]
+position = Vector2(0, 25)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_epxgx")

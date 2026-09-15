@@ -33,7 +33,8 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"Dialog/timeline": "res://Dialog/timeline.dtl"
+"Dialog/timeline": "res://Dialog/timeline.dtl",
+"tweaker": "res://Dialog/tweaker.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Dialog.tres",

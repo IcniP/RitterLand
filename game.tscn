@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://opw243uq3q5m" path="res://Assets/Maps/highlight.png" id="2_vef74"]
 [ext_resource type="Texture2D" uid="uid://frdktc8pfjq" path="res://Assets/Maps/Grass.png" id="3_ryrav"]
 [ext_resource type="PackedScene" uid="uid://ghtp0b56j8fa" path="res://lan.tscn" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://chjv17ritj2v5" path="res://Ilia.gd" id="5_hve3p"]
 [ext_resource type="Script" uid="uid://dqr73vwd8763m" path="res://Scripts/ui/PlayerInputHandler.gd" id="8_hve3p"]
 [ext_resource type="Script" uid="uid://cafpvipd5p4jq" path="res://Scripts/core/TurnManager.gd" id="9_mfdv2"]
+[ext_resource type="Script" uid="uid://csm4t6ck7j2wq" path="res://Scripts/core/FreeCam.gd" id="11_mfdv2"]
 
 [sub_resource type="GDScript" id="GDScript_7jktm"]
 script/source = "extends Node2D
@@ -115,52 +117,52 @@ texture = ExtResource("2_ryrav")
 1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 8)
-1:0/0/y_sort_origin = 2
+1:0/0/y_sort_origin = 4
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.856185, 8, -4.6763268, 8, 1.2590122, -8, 1.2590122)
 2:0/size_in_atlas = Vector2i(1, 2)
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, 8)
-2:0/0/y_sort_origin = 2
+2:0/0/y_sort_origin = 4
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.856185, 8, -4.6763268, 8, 1.2590122, -8, 1.2590122)
 5:0/size_in_atlas = Vector2i(1, 2)
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 8)
-5:0/0/y_sort_origin = 2
+5:0/0/y_sort_origin = 4
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.856185, 8, -4.6763268, 8, 1.2590122, -8, 1.2590122)
 6:0/size_in_atlas = Vector2i(1, 2)
 6:0/0 = 0
 6:0/0/texture_origin = Vector2i(0, 8)
-6:0/0/y_sort_origin = 2
+6:0/0/y_sort_origin = 4
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.856185, 8, -4.6763268, 8, 1.2590122, -8, 1.2590122)
 0:2/size_in_atlas = Vector2i(1, 2)
 0:2/0 = 0
 0:2/0/texture_origin = Vector2i(0, 8)
-0:2/0/y_sort_origin = 2
+0:2/0/y_sort_origin = 4
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.1583042, -4.4964676, 8, -4.6763268, 8, 1.2590122, -2.5180225, 0.71943474)
 3:2/size_in_atlas = Vector2i(1, 2)
 3:2/0 = 0
 3:2/0/texture_origin = Vector2i(0, 8)
-3:2/0/y_sort_origin = 2
+3:2/0/y_sort_origin = 4
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.6763268, 2.6978817, -4.4964676, 2.877739, 0.8992939, -8, 0.71943474)
 4:0/size_in_atlas = Vector2i(1, 2)
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(0, 8)
-4:0/0/y_sort_origin = 2
+4:0/0/y_sort_origin = 4
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.1583042, -4.4964676, 8, -4.6763268, 8, 1.2590122, -2.5180225, 0.71943474)
 7:0/size_in_atlas = Vector2i(1, 2)
 7:0/0 = 0
 7:0/0/texture_origin = Vector2i(0, 8)
-7:0/0/y_sort_origin = 2
+7:0/0/y_sort_origin = 4
 7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.6763268, 2.6978817, -4.4964676, 2.877739, 0.8992939, -8, 0.71943474)
 5:2/size_in_atlas = Vector2i(1, 2)
 5:2/0 = 0
 5:2/0/texture_origin = Vector2i(0, 8)
-5:2/0/y_sort_origin = 2
+5:2/0/y_sort_origin = 4
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.3381624, 0.17985916, -2.5180216, 0.17985916, 2.3381634, -8, 2.3381634)
 6:2/size_in_atlas = Vector2i(1, 2)
 6:2/0 = 0
 6:2/0/texture_origin = Vector2i(0, 8)
-6:2/0/y_sort_origin = 2
+6:2/0/y_sort_origin = 4
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.71943474, -1.978445, 8, -2.1583042, 8, 1.978447, -0.71943474, 2.1583061)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-10.611665, -2.5180216, 1.0791531, -3.057598, 0.17985916, 5.215904, -10.611665, 4.856186)
@@ -169,12 +171,12 @@ texture = ExtResource("2_ryrav")
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 8)
-0:0/0/y_sort_origin = 2
+0:0/0/y_sort_origin = 4
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.978447, -1.6187286, 10.791523, -2.1583042, 10.431807, 4.136751, -1.6187286, 3.956892)
 3:0/size_in_atlas = Vector2i(1, 2)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, 8)
-3:0/0/y_sort_origin = 2
+3:0/0/y_sort_origin = 4
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1.978445, 1.6187286, -2.1583042, 1.6187286, 3.7770348, -8, 3.5971756)
 
 [sub_resource type="TileSet" id="TileSet_xrivr"]
@@ -182,8 +184,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hve3p")
 sources/1 = SubResource("TileSetAtlasSource_mfdv2")
 sources/2 = SubResource("TileSetAtlasSource_ryrav")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 
 [node name="game" type="Node2D" unique_id=2129578767]
 position = Vector2(-1, 0)
@@ -203,30 +203,35 @@ tile_set = SubResource("TileSet_13qdw")
 y_sort_enabled = true
 position = Vector2(-15, 16)
 
-[node name="Ilia" parent="Y-sort" unique_id=599916813 instance=ExtResource("1_80nbo")]
-position = Vector2(348, 120.00001)
-
-[node name="Camera2D" type="Camera2D" parent="Y-sort/Ilia" unique_id=2063192883]
-position = Vector2(14.999999, 20)
-scale = Vector2(4.9999995, 4.9999995)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
 [node name="Lan" parent="Y-sort" unique_id=1647031635 instance=ExtResource("4_fc0e3")]
 y_sort_enabled = true
-position = Vector2(420, 182)
+position = Vector2(389, 172)
+spd = 2
+
+[node name="Ilia" parent="Y-sort" unique_id=599916813 instance=ExtResource("1_80nbo")]
+position = Vector2(264, 114)
+script = ExtResource("5_hve3p")
 
 [node name="ObjectLayer" type="TileMapLayer" parent="Y-sort" unique_id=117145078]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAKAAEAAQAAAAQAAAAMAAEAAQAAAAQAAAAOAAEAAQAAAAQAAAAOAAMAAQAAAAQAAAAMAAMAAQAAAAQAAAAKAAMAAQAAAAQAAAAKAAUAAQAAAAQAAAAMAAUAAQAAAAQAAAAOAAUAAQAAAAQAAAAgAAsAAAABAAAAAAAgAAcAAAABAAAAAAAgAAMAAAABAAAAAAAgAAAAAAABAAAAAAAgAAwAAAABAAEAAAAfAA0AAAABAAIAAAAZAA0AAAABAAIAAAAWAA0AAAABAAIAAAAVAA0AAAAAAAIAAAAVAAsAAAABAAAAAAAfAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAXAAsAAAAAAAMAAAAYAAsAAAABAAAAAAAeAA4AAAAAAAAAAAAfAA4AAAABAAAAAAAXAA4AAAAAAAAAAAAYAA4AAAABAAAAAAAbAAsAAAAAAAEAAAAVAAYAAAABAAAAAAAVAAEAAAABAAAAAAAVAP3/AAABAAAAAAAVAPz/AAABAAAAAAAUAPz/AAAAAAAAAAAUAAEAAAAAAAEAAAAQAAEAAQAAAAQAAAAQAAMAAQAAAAQAAAAQAAUAAQAAAAQAAAAQAAcAAQAAAAQAAAAOAAcAAQAAAAQAAAAMAAcAAQAAAAQAAAAKAAcAAQAAAAQAAAAhAA0AAAADAAMAAAAgAA0AAAACAAMAAAAhAAwAAAADAAIAAAAhAAkAAAADAAIAAAAhAAUAAAADAAIAAAAhAAIAAAADAAIAAAAhAAAAAAADAAEAAAAVAAMAAAABAAMAAAAVAAkAAAABAAMAAAAXAAMAAAAAAAMAAAAfAP3/AAAAAAMAAAAaAPz/AAAAAAMAAAASAA4AAAAAAAMAAAAQAAwAAAACAAEAAAAWAAUAAAADAAIAAAAWAAoAAAADAAIAAAAWAP//AAADAAIAAAAdAAwAAAADAAAAAAAZAAwAAAADAAAAAAAWAAwAAAACAAAAAAAcAAwAAAACAAAAAAAeAAsAAAACAAIAAAAYAA0AAAACAAMAAAAXAAgAAAABAAIAAAAUAAcAAAADAAAAAAAVAAgAAAAAAAEAAAAWAAcAAAACAAAAAAAWAAgAAAACAAMAAAAVAAcAAAABAAEAAAAUAAYAAAACAAEAAAAXAAYAAAAAAAAAAAAWAAkAAAADAAIAAAATAAoAAgADAAIAAAAHAAoAAgAAAAIAAAAIAP//AgABAAAAAAAJAP//AgACAAAAAAAKAP//AgABAAAAAAALAP//AgACAAAAAAAMAP//AgABAAAAAAANAP//AgACAAAAAAAOAP//AgABAAAAAAAPAP//AgACAAAAAAAQAP//AgABAAAAAAARAP//AgACAAAAAAASAP//AgABAAAAAAATAP//AgADAAAAAAAHAP//AgAAAAAAAAATAAAAAgACAAIAAAATAAEAAgACAAIAAAATAAIAAgACAAIAAAATAAMAAgACAAIAAAATAAQAAgACAAIAAAATAAUAAgACAAIAAAATAAYAAgAHAAAAAAATAAgAAgACAAIAAAATAAkAAgACAAIAAAAHAAkAAgABAAIAAAAHAAgAAgABAAIAAAAHAAcAAgABAAIAAAAHAAYAAgABAAIAAAAHAAUAAgABAAIAAAAHAAQAAgABAAIAAAAHAAMAAgABAAIAAAAHAAIAAgABAAIAAAAHAAEAAgABAAIAAAAHAAAAAgABAAIAAAAPAAoAAgABAAAAAAAQAAoAAgACAAAAAAANAAoAAgABAAAAAAAOAAoAAgACAAAAAAALAAoAAgABAAAAAAAMAAoAAgACAAAAAAAJAAoAAgABAAAAAAAKAAoAAgACAAAAAAAIAAoAAgACAAAAAAARAAoAAgAFAAIAAAASAAoAAgAGAAIAAAA=")
+tile_map_data = PackedByteArray("AAAKAAEAAQAAAAQAAAAMAAEAAQAAAAQAAAAOAAEAAQAAAAQAAAAOAAMAAQAAAAQAAAAMAAMAAQAAAAQAAAAKAAMAAQAAAAQAAAAKAAUAAQAAAAQAAAAMAAUAAQAAAAQAAAAOAAUAAQAAAAQAAAAgAAsAAAABAAAAAAAgAAcAAAABAAAAAAAgAAMAAAABAAAAAAAgAAAAAAABAAAAAAAgAAwAAAABAAEAAAAfAA0AAAABAAIAAAAZAA0AAAABAAIAAAAWAA0AAAABAAIAAAAVAA0AAAAAAAIAAAAVAAsAAAABAAAAAAAfAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAXAAsAAAAAAAMAAAAYAAsAAAABAAAAAAAeAA4AAAAAAAAAAAAfAA4AAAABAAAAAAAXAA4AAAAAAAAAAAAYAA4AAAABAAAAAAAbAAsAAAAAAAEAAAAVAAYAAAABAAAAAAAVAAEAAAABAAAAAAAVAP3/AAABAAAAAAAVAPz/AAABAAAAAAAUAPz/AAAAAAAAAAAUAAEAAAAAAAEAAAAQAAEAAQAAAAQAAAAQAAMAAQAAAAQAAAAQAAUAAQAAAAQAAAAQAAcAAQAAAAQAAAAOAAcAAQAAAAQAAAAMAAcAAQAAAAQAAAAKAAcAAQAAAAQAAAAhAA0AAAADAAMAAAAgAA0AAAACAAMAAAAhAAwAAAADAAIAAAAhAAkAAAADAAIAAAAhAAUAAAADAAIAAAAhAAIAAAADAAIAAAAhAAAAAAADAAEAAAAVAAMAAAABAAMAAAAVAAkAAAABAAMAAAAXAAMAAAAAAAMAAAAfAP3/AAAAAAMAAAAaAPz/AAAAAAMAAAASAA4AAAAAAAMAAAAQAAwAAAACAAEAAAAWAAUAAAADAAIAAAAWAAoAAAADAAIAAAAWAP//AAADAAIAAAAdAAwAAAADAAAAAAAZAAwAAAADAAAAAAAWAAwAAAACAAAAAAAcAAwAAAACAAAAAAAeAAsAAAACAAIAAAAYAA0AAAACAAMAAAAXAAgAAAABAAIAAAAUAAcAAAADAAAAAAAVAAgAAAAAAAEAAAAWAAcAAAACAAAAAAAWAAgAAAACAAMAAAAVAAcAAAABAAEAAAAUAAYAAAACAAEAAAAXAAYAAAAAAAAAAAAWAAkAAAADAAIAAAATAAoAAgADAAIAAAAHAAoAAgAAAAIAAAAIAP//AgAFAAAAAAAJAP//AgAGAAAAAAAKAP//AgABAAAAAAALAP//AgACAAAAAAAMAP//AgABAAAAAAANAP//AgACAAAAAAAOAP//AgABAAAAAAAPAP//AgACAAAAAAAQAP//AgAFAAAAAAARAP//AgAGAAAAAAASAP//AgABAAAAAAATAP//AgADAAAAAAAHAP//AgAAAAAAAAATAAAAAgACAAIAAAATAAEAAgACAAIAAAATAAIAAgACAAIAAAATAAMAAgACAAIAAAATAAQAAgACAAIAAAATAAUAAgACAAIAAAATAAYAAgAHAAAAAAATAAgAAgACAAIAAAATAAkAAgACAAIAAAAHAAkAAgABAAIAAAAHAAgAAgABAAIAAAAHAAcAAgABAAIAAAAHAAYAAgABAAIAAAAHAAUAAgABAAIAAAAHAAQAAgABAAIAAAAHAAMAAgABAAIAAAAHAAIAAgABAAIAAAAHAAEAAgABAAIAAAAHAAAAAgABAAIAAAAPAAoAAgABAAAAAAAQAAoAAgACAAAAAAANAAoAAgABAAAAAAAOAAoAAgACAAAAAAALAAoAAgABAAAAAAAMAAoAAgACAAAAAAAJAAoAAgABAAAAAAAKAAoAAgACAAAAAAAIAAoAAgACAAAAAAARAAoAAgAFAAIAAAASAAoAAgAGAAIAAAA=")
 tile_set = SubResource("TileSet_xrivr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Y-sort/ObjectLayer" unique_id=1984261980]
-y_sort_enabled = true
-shape = SubResource("RectangleShape2D_xrivr")
+[node name="Ilia2" parent="Y-sort" unique_id=553800768 instance=ExtResource("1_80nbo")]
+position = Vector2(334, 169)
+spd = 4
 
 [node name="PlayerInputHandler" type="Node2D" parent="." unique_id=943965450]
 script = ExtResource("8_hve3p")
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=399451483 node_paths=PackedStringArray("target_unit", "turn_manager")]
+position = Vector2(374, 188)
+scale = Vector2(4.9999995, 4.9999995)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+script = ExtResource("11_mfdv2")
+target_unit = NodePath("../Y-sort/Lan")
+turn_manager = NodePath("../TurnManager")
 
 [node name="TurnManager" type="Node" parent="." unique_id=1455267753]
 script = ExtResource("9_mfdv2")
