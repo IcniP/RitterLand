@@ -1,80 +1,126 @@
-<p align="center">
-  <img width="1280" alt="cover" src="https://user-images.githubusercontent.com/2206700/189457799-6327bab0-b085-4421-8640-6a18e395d17d.png">
-</p>
-
-<h1 align="center">Dialogic 2</h1>
+<h1 align="center">Ritterland</h1>
 
 <p align="center">
-  Create <b>Dialogs</b>, <b>Visual Novels</b>, <b>RPGs</b>, and <b>manage Characters</b> with Godot to create your Game!
+  <i>A story-driven academy RPG where you play the one person who knows how the story is supposed to end.</i>
 </p>
 
 <p align="center">
-  <a href="https://discord.gg/DjcDgDaTMe" target="_blank" style="text-decoration:none"><img alt="Discord" src="https://img.shields.io/discord/628713677239091231?logo=discord&labelColor=CFC9C8&color=646FA9"></a>
-  <a href="https://godotengine.org/download/" target="_blank" style="text-decoration:none"><img alt="Godot v4.3+" src="https://img.shields.io/badge/Godot-v4.3+-%23478cbf?labelColor=CFC9C8&color=49A9B4" /></a>
-  <a href="https://docs.dialogic.pro/introduction.html" target="_blank" style="text-decoration:none"><img alt="Dialogic 2 Documentation" src="https://img.shields.io/badge/documention-online-green?labelColor=CFC9C8&color=6BCD69"></a>
-  <a href="https://github.com/dialogic-godot/dialogic/actions/workflows/unit_test.yml" target="_blank style="text-decoration:none"><img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/dialogic-godot/dialogic/unit_test.yml?labelColor=CFC9C8&color=DBDCB8"></a>
-  <a href="https://github.com/dialogic-godot/dialogic/releases"  target="_blank" style="text-decoration:none"><img alt="Latest Dialogic Release" src="https://img.shields.io/github/v/release/dialogic-godot/dialogic?include_prereleases&labelColor=CFC9C8&color=CBA18C"></a>
+  <img alt="Godot 4.5+" src="https://img.shields.io/badge/Godot-4.5%2B-478cbf?logo=godotengine&logoColor=white">
+  <img alt="Dialogic 2" src="https://img.shields.io/badge/Dialogic-2.0%20alpha-6BCD69">
+  <img alt="Status" src="https://img.shields.io/badge/status-in%20development-orange">
+  <img alt="Genre" src="https://img.shields.io/badge/genre-academy%20RPG%20%2F%20visual%20novel-blueviolet">
 </p>
 
-## Table of Contents
-- [Version](#version)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Testing](#testing)
-- [Credits](#credits)
-- [License](#license)
+<!-- Add a screenshot or GIF here: ![Gameplay](docs/screenshot.png) -->
 
-## Version
+## About
 
-Dialogic 2 **requires at least Godot 4.3**.
+**Ritterland** is a 2D academy RPG that mixes visual-novel storytelling with grid-based tactical combat, in the spirit of an academy-setting manhwa you can actually play.
 
-[If you are looking for the Godot 3.x version (Dialogic 1.x) you can find it here.](https://github.com/dialogic-godot/dialogic-1)
+You are **Lan Schwert**, a retired competitive swordsman who wakes up inside *Ritterland*, the brutal fantasy game he spent 2,450 hours perfecting. He knows every route, every trigger, and the price the game always demands: friends die, countries vanish, nobody gets a clean ending.
 
-## Installation
-Follow the installation instructions on our [Getting Started](https://docs.dialogic.pro/getting-started.html#1-installation--activation) documentation.
+He enrolls at **Tausend Sterne Academy** with a plan to stay unnoticed, rank sixty-seven out of eighty-four, and quietly keep the story's hero alive. Then he checks the rank board and the hero's name is missing.
 
-Dialogic comes with an auto-updater so you can install future versions right from within the plugin.
+## Genre
 
-## Documentation
-You can find the official documentation of Dialogic here: [Dialogic Documentation](https://docs.dialogic.pro/)
+- Academy RPG / visual novel hybrid
+- Grid-based tactical combat with simultaneous turn resolution
+- Character-driven story with relationship (affinity) meters
+- Fantasy, with swordplay grounded in historical European martial arts (HEMA)
 
-There is a Class Reference as well: [Class Reference](https://docs.dialogic.pro/class_index.html)
+## Story
 
+The game follows the novel *Ritterland* chapter by chapter. Season 1 runs from the prologue through Chapter 15:
 
-## Connect with us!
-If you need help or want to share your Dialogic projects, take a look at the following options:
+- Lan's exile from his mountain home and his six years alone on the road
+- Entrance trials, the ceremony, and the discovery that someone has been erased from the rank list
+- The first months at Tausend Sterne: sparring under Instructor Amir, a monster hunt that turns into an assassination attempt, and the Headmaster's questions about Lan's family
+- A secret sparring pact in the abandoned east wing, a public duel, and a strange pill that should not exist yet
+- The Alchemy Fair ambush, and the boy who learns what he is not strong enough to protect yet
 
-- Ask questions, or report bugs on our [Discord](https://discord.gg/DjcDgDaTMe)
-- Report bugs and issues on the [GitHub Issues Page](https://github.com/dialogic-godot/dialogic/issues)
-- Ask questions on [GitHub Discussions](https://github.com/dialogic-godot/dialogic/discussions)
+The story is fixed to the novel. Your choices change how Lan talks and how the people around him feel about him. They do not change what happens.
 
-## Testing
-Dialogic uses [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing) to ensure specific parts function as expected. These tests run on every git push and pull request. The framework to do these tests is called [gdUnit4](https://github.com/MikeSchulze/gdUnit4) and our tests reside in the [/Tests/Unit](https://github.com/dialogic-godot/dialogic/tree/main/Tests/Unit) path. We recommend installing the `gdUnit4` add-on from the `AssetLib`, with this add-on, you can run tests locally.
+## Features
 
-To get started, take a look at the existing files in the path and read the documentation to [create your first test](https://mikeschulze.github.io/gdUnit4/first_steps/firstTest/).
+- **Story-locked branching dialogue.** Every choice is a different way for Lan to respond (dry, sarcastic, sincere), and each one nudges an affinity meter. Rank and plot follow the novel exactly.
+- **Affinity system.** Track your bond with Liesel, Enriko, Veldero, Leonora, Ilia, Florentine, Raiz and others.
+- **Simultaneous tactical combat.** Queue actions for your whole party during a Planning phase, then watch them resolve together in order of speed. Actors who fall before their turn have their action cancelled.
+- **Combat zones.** Fights start when a scene's dialogue ends and hand control back to the dialogue when the fight is over.
+- **Custom dialogue polish.** Slow single-beat ellipses, shortened line breaks, and a flash-and-fade portrait swap, all built on Dialogic 2.
+- **Cutscene glue.** A small autoload connects Dialogic signals to sprites, backgrounds and combat.
 
-## Interacting with the Source Code
-All methods and variables in the Dialogic 2 source **code prefixed with an underscore (`_`)** are considered *private*, for instance: `_remove_character()`.
+## Main Cast
 
-While you can use them, they may change in their behavior or change their signature, causing breakage in your code while moving between versions.
-Most private methods are used inside public ones; if you need help, check the documentation.
+| Character | Role |
+|---|---|
+| **Lan Schwert** | The player. A retired swordsman with a wasted gi reserve and a montante he keeps wrapped up. |
+| **Enriko** | Support Department, rich, chatty, and secretly well-connected. |
+| **Veldero** | Physical Department, ordinary on the surface. Seventy-four of eighty-four. |
+| **Liesel** | Healer with a flat stare and the smoothest gi control in the year. |
+| **Leonora von Rosendael** | Crown Princess of Britannic Arcana, rank three. |
+| **Ilia (Iliako Fengari)** | Ninth in the whole academy, and a very good secret keeper. |
+| **Florentine** | Gifted alchemist. |
+| **Raiz Al Khalid** | Rank one, prince of Al-Tale'a. |
+| **Berthram** | The Headmaster, and the Empire Sun. |
+| **Amir** | Head sword instructor. |
 
-**Public methods and variables can be found in our [Class Reference](https://docs.dialogic.pro/class_index.html).**
+## Gameplay Overview
 
-During the Alpha and Beta version stages, code may change at any Dialogic Release to allow drafting a better design.
-Changelogs will accommodate for these changes and inform you on how to update your code.
+1. **Explore** the academy in real time and talk to students and instructors.
+2. **Dialogue** scenes play out chapter by chapter, with reply choices and affinity changes.
+3. **Combat** starts from story triggers. In the Planning phase you queue moves and attacks for each party member, then Execution resolves everyone's actions by speed.
+4. **Progress** through the season while your relationships grow.
 
+## Project Status
+
+This is an active work in progress.
+
+| Area | State |
+|---|---|
+| Season 1 script (Prologue, Ch. 1 to 15) | Written as Dialogic timelines |
+| Dialogue polish (line lengths, ellipses, portrait swap) | Done |
+| Combat (planning and execution, party, combat zone) | Prototype |
+| Cutscene and combat hand-off | Prototype with placeholder sprites |
+| Character portraits and sprites | Mostly placeholder |
+| Season 2 | Planned |
+
+## Tech Stack
+
+- **Engine:** [Godot](https://godotengine.org/) 4.5 or newer
+- **Dialogue:** [Dialogic 2](https://github.com/dialogic-godot/dialogic) (alpha)
+- **Language:** GDScript
+
+## Getting Started
+
+1. Install Godot 4.5 or newer.
+2. Clone the repository:
+   ```
+   git clone https://github.com/IcniP/RitterLand.git
+   ```
+3. Open the project in Godot (`project.godot`) and let it import assets.
+4. Make sure the **Dialogic** plugin is enabled under Project Settings, Plugins.
+5. Run the project. To start a chapter from code:
+   ```gdscript
+   Cutscene.play("ch00_prologue")
+   ```
+
+## Project Structure
+
+```
+Dialog/S1/          Season 1 timelines (.dtl) and character files (.dch)
+Scripts/core/       Global state, combat manager, turn manager, cutscene glue
+Scripts/entities/   Player, party, enemy and NPC base classes
+Scripts/ui/         Combat HUD, pause menu, input handling
+Assets/             Sprites, portraits, custom textbox
+scenes/             Character and enemy scenes
+addons/dialogic/    Dialogic 2 plugin
+```
 
 ## Credits
-Made by [Jowan-Spooner](https://github.com/Jowan-Spooner) and [Emilio Coppola](https://github.com/coppolaemilio).
 
-Contributors: [CakeVR](https://github.com/CakeVR), [Exelia](https://github.com/exelia-antonov), [zaknafean](https://github.com/zaknafean), [and more!](https://github.com/dialogic-godot/dialogic/graphs/contributors).
-
-Special thanks: [Arnaud](https://github.com/arnaudvergnet), [AnidemDex](https://github.com/AnidemDex), [ellogwen](https://github.com/ellogwen), [Tim Krief](https://github.com/timkrief), [Toen](https://twitter.com/ToenAndreMC), Òscar, [Francisco Presencia](https://francisco.io/), [M7mdKady14](https://github.com/M7mdKady14).
-
-### Thank you to all my [Patreons](https://www.patreon.com/jowanspooner) and Github sponsors for making this possible!
+- Story, game design and development by [IcniP](https://github.com/IcniP).
+- Dialogue system: [Dialogic 2](https://github.com/dialogic-godot/dialogic) by Jowan-Spooner, Emilio Coppola and contributors (MIT).
 
 ## License
-This project is licensed under the terms of the [MIT license](https://github.com/dialogic-godot/dialogic/blob/main/LICENSE).
 
-Dialogic may use the [Roboto font](https://fonts.google.com/specimen/Roboto), licensed under [Apache license, Version 2.0](https://github.com/dialogic-godot/dialogic/tree/main/addons/dialogic/Example%20Assets/Fonts/LICENSE.txt).
+See [LICENSE](LICENSE). Dialogic is included under its own MIT license.
