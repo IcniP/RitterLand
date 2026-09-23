@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bio3yyge5fh77" path="res://Assets/Maps/tileset.png" id="1_ko25a"]
 [ext_resource type="Script" uid="uid://delobw7xt4rt" path="res://scenes/test/battle_test.gd" id="1_qhks8"]
-[ext_resource type="PackedScene" uid="uid://bb1svdgj2jlb6" path="res://Ilia.tscn" id="1_yon41"]
+[ext_resource type="PackedScene" uid="uid://bb1svdgj2jlb6" path="res://scenes/Ilia.tscn" id="1_yon41"]
 [ext_resource type="Script" uid="uid://ctrgpjmjtx0e0" path="res://Scripts/entities/Unit.gd" id="2_k1vm5"]
-[ext_resource type="PackedScene" uid="uid://ghtp0b56j8fa" path="res://lan.tscn" id="3_ko25a"]
+[ext_resource type="PackedScene" uid="uid://ghtp0b56j8fa" path="res://scenes/lan.tscn" id="3_ko25a"]
 [ext_resource type="Script" uid="uid://cafpvipd5p4jq" path="res://Scripts/core/TurnManager.gd" id="4_qhks8"]
 [ext_resource type="Script" uid="uid://dqr73vwd8763m" path="res://Scripts/ui/PlayerInputHandler.gd" id="5_bt4vk"]
 

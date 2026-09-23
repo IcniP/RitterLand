@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ghtp0b56j8fa"]
 
 [ext_resource type="Texture2D" uid="uid://t8xhtu0xhrud" path="res://Assets/Lan.png" id="1_5mc1r"]
-[ext_resource type="Script" uid="uid://ctrgpjmjtx0e0" path="res://Scripts/entities/Unit.gd" id="1_bd7iu"]
+[ext_resource type="Script" uid="uid://derju7bbdv8eq" path="res://Scripts/entities/EntityBase.gd" id="1_guwyq"]
 [ext_resource type="PackedScene" uid="uid://co3jmdrkfq2wv" path="res://Interaction/interacting.tscn" id="3_bd7iu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bd7iu"]
@@ -282,11 +282,8 @@ animations = [{
 radius = 3.0
 height = 8.0
 
-[node name="Lan" type="CharacterBody2D" unique_id=1647031635 node_paths=PackedStringArray("animated_sprite")]
-script = ExtResource("1_bd7iu")
-is_player_controlled = true
-spd = 100
-animated_sprite = NodePath("AnimatedSprite2D")
+[node name="Lan" type="CharacterBody2D" unique_id=1647031635]
+script = ExtResource("1_guwyq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=917613744]
 y_sort_enabled = true

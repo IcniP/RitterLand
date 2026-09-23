@@ -32,7 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "E To Talk"
 label_settings = SubResource("LabelSettings_13qdw")
 
 [connection signal="area_entered" from="interactrange" to="." method="_on_interactrange_area_entered"]

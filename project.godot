@@ -18,13 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+Global="*uid://dp2wqkyd0tw4g"
 
 [dialogic]
 
 directories/dch_directory={
 "Dialog/Ilia": "res://Dialog/Ilia.dch",
 "Florentine": "res://Dialog/Florentine.dch",
-"Ilia": "res://Ilia.dch",
+"Ilia": "res://scenes/Ilia.dch",
 "Lan": "res://Dialog/Lan.dch",
 "Leonora": "res://Dialog/Leonora.dch",
 "Liesel": "res://Dialog/Liesel.dch",
