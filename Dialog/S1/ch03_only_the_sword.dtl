@@ -1,0 +1,99 @@
+label amir_class
+[signal arg="bg:training_hall"]
+The training hall smelled like oiled steel and cold morning air, and it was already half full when Lan walked in.
+Sixty-some first-years in the Physical Department stood in loose knots, nobles drifting toward nobles, commoners toward commoners.
+Instructor Amir walked in from the side door without any announcement, and the room went quiet on its own.
+Amir: One rule. In this hall you fight with a sword and with gi. Nothing else.
+Amir: No shir, no tricks, no clever devices your family bought you.
+Amir: If I see anything else in your hand or in your casting, you get a zero for the day. Not a warning. A zero.
+Amir: This is not a punishment. It's a mercy. Shir will save your life someday.
+Amir: It will not save it today, and if you lean on it now, you will never learn what your body can do without it.
+Amir: Every one of you will meet a night where your gi runs dry and your shir with it.
+Amir: On that night, the only thing between you and dying is whether your hands remember how to hold a blade.
+Amir: I intend to make sure they do.
+Amir: Three styles account for most of what I'll see. Ritterland teaches Fechtkunst, the longsword and the Langes Messer.
+Amir: Britannic Arcana teaches the rapier, all point and footwork.
+Amir: Al-Tale'a teaches the sabre's draw-slice, a circle that cuts on the way out of the sheath.
+Amir: None of them is right. Every one is an answer to how a human body actually moves. I care whether you understand why it works.
+Amir: Now, gi. Your capacity is fixed. No training makes the vessel bigger. What training does is teach you not to waste what's already inside it.
+Amir: A fighter with a small vessel and perfect control will beat an ocean of gi and no discipline, every time. Feet. Eyes.
+Amir: Gi into the legs, and your speed changes. Gi into the eyes, and the world slows enough to read.
+Amir: Some of you have had an instructor since you could walk. Some of you have had nothing. I don't care which.
+Amir: I have buried highborn children taught by the finest instructors on the continent, and I have watched farm boys outlast them.
+For half a second, Lan could have sworn his eyes stopped on him. Then they moved on.
+Amir: Pair up. We're sparring.
+set {stat_control} += 1
+label spar
+The pairing wasn't random.
+Amir read names off a slate, pairing the middle of the list against itself and the top against the top,
+except when he clearly wanted to see something specific happen.
+Amir: Schwert, Lan. Rosendael, Leonora.
+The room went quiet the way a room does when it smells a story starting.
+Lan (Sus): (Rank {rank} against rank three. Nobody expects a contest.)
+Leonora (Default): {rank}. Try not to make this take too long. Guard.
+- Give her a deliberately bad guard
+	Lan (Sus): (Weight too far back. Elbow too high. About four percent wrong. A real amateur would never notice, and a trained eye clocks it in a second.)
+- Just phone it in
+	Lan (Smug): (Nobody expects a contest. Nobody should get one.)
+	Lan (Sus): (About four percent wrong ought to do it.)
+She clocked it in a second. One clean testing line, and Lan let his parry arrive a beat late. The flat of her blade tapped his collarbone.
+Leonora (Confused): You had time to close that line. You didn't.
+Lan (Acting): Guess I froze.
+Leonora (Mad): You didn't freeze. Freezing looks different. That looked like you decided not to bother.
+Leonora (Mad): If you're not going to try, don't ask to be paired with someone who is.
+Lan (Talk): I didn't ask to be paired with anyone. The slate did that.
+Leonora (Mad): Then next time, argue with the slate. You're wasting a rank {rank}'s worth of everyone's morning.
+She sheathed her practice blade with a small, precise motion and walked off to report the round to Amir, spine straight, without looking back.
+Lan (Sus): (That went exactly the way it was supposed to.)
+Lan (Sus): (It didn't feel like it had.)
+Veldero: Rough.
+Lan (Talk): Thanks for that. Really felt the support.
+Veldero: I was rooting for you internally. You want to spar? Nothing official. I'm not going to hit you hard at all, honestly. I'm pretty bad at this.
+Lan (Sus): (Even a friendly spar means showing him something true about how I move. The safest number of people who know what I can do is close to zero.)
+Lan (Talk): Appreciate it, but I think I'll go be embarrassed in private today.
+Veldero: Suit yourself. You see Raiz's match?
+Lan (Default): Rank one against some unlucky forty-something. It wasn't a contest, it was a demonstration.
+Veldero: That's the scary part. I don't think he was even trying. Imagine being that good and that annoyed about being here.
+Lan (Smug): Must be exhausting, being a genius.
+label courtyard
+[signal arg="bg:east_cloister"]
+Three weeks in, Lan learned some things didn't need a game script to happen. They just happened, the way ordinary cruelty always had.
+A girl was backed against the low wall, a satchel of glass vials spilled in front of her,
+one already broken and leaking something that smelled of crushed mint.
+Brown hair, fox ears pinned flat, tail wrapped tight, and red eyes bright with fury rather than fear.
+Over her, one boot on the satchel strap, stood Han, pale and precise, rank five. Beside him, Jack, rank seventeen, grinning.
+Han: Didn't realize the academy let strays enroll now. What is this, hedge medicine? Did you dig it out of a gutter?
+Florentine (Mad): It's alchemy. Give me back my[pause=0.35][lspeed=0.25!]...[lspeed]
+Jack: Ask nicely.
+Jack kicked an unbroken vial just out of her reach, lazily, like flicking a coin he didn't want.
+Veldero: Hey. That's not yours. Give it back.
+Han: I'm sorry, do I know you? Seventy-four. Seventy-four is going to lecture me. Wonderful.
+- Step in between Jack and Veldero
+	set {aff_veldero} += 1
+	Lan (Default): (Move. Now.)
+- Draw their attention with a joke
+	set {aff_florentine} += 1
+	Lan (Smug): Fascinating. Does the boot come with the strap, or is that extra?
+Lan (Talk): He said give it back. I'll say it however many times it takes.
+Jack: You're the {rank} who couldn't hold a guard against Rosendael.
+Lan (Smug): Funny thing about guards. You only need a good one against someone worth using it on.
+Han's eyes narrowed, and for a moment it looked like it was actually going to happen on the flagstones, three weeks in, over a broken vial of mint.
+Leonora (Default): That's enough.
+The voice cut across the courtyard like a blade laid flat on a table, not loud, but absolute.
+Leonora (Mad): Rank five and rank seventeen, harassing a first-year over spilled alchemy supplies. In front of witnesses. In daylight.
+Leonora (Mad): Pick up what you knocked over. Pay for what you broke.
+Leonora (Mad): If I see either of you doing this again, I will not be nearly this reasonable about it.
+Han lifted his boot off the strap, straightened his jacket with two sharp tugs, and left without a backward glance.
+Jack followed, throwing one last look at Veldero that promised this wasn't finished.
+Veldero was already crouched beside the girl, helping her gather vials, murmuring apologies about the mint.
+Leonora (Confused): You didn't close that line three weeks ago. You closed this one just fine.
+Lan (Default): Guess I only try when it matters.
+Something crossed her face that wasn't quite a smile and wasn't quite annoyance. She turned and walked away, noticeably slower than she needed to.
+Lan (Talk): You're Florentine. Rank twenty-six. Alchemy and combat utility.
+Florentine (Default): And you're the idiot who almost started a fight over my mint.
+Lan (Smug): In my defense, it smelled very expensive.
+Florentine (Blush): Hmph.
+It got something close to a laugh out of her. Short, surprised, quickly hidden.
+set {aff_florentine} += 1
+[signal arg="chapter_end:ch03"]
+[end_timeline]

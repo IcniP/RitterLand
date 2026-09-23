@@ -1,0 +1,101 @@
+label weeks
+[signal arg="bg:infirmary"]
+He was out for three weeks. Doc explained it later, in the flat, unhurried way he explained everything.
+The blade had gone in close enough to the spine that any healer without exceptional control would have killed him trying to close it too fast.
+What Doc used, in the end, was a slow, careful Regeneration Shir, coaxing torn tissue back into itself thread by thread over days rather than minutes.
+It was the exact discipline Liesel had spent two years quietly teaching herself out of borrowed texts,
+and had never been allowed to practice on a person.
+Kliam sat in a cell beneath the Order of Knights' headquarters for all three of those weeks, saying nothing. Aftgan had not been found.
+Lan knew none of this while it was happening. Just a long gray absence that ended, finally, with light.
+label first_faces
+Liesel (Flat): You're awake.
+Her voice cracked on the second word in a way he'd never heard from her.
+Lan (Acting): Apparently. How long?
+Liesel (Default): Three weeks. Don't ever do that again. I mean it.
+Liesel (Default): I have spent three weeks reading everything this academy owns about spinal trauma and I never want to need any of it again.
+Florentine (Flat): You almost died protecting an event where I was the one who nearly got kidnapped. Do you understand how that makes me feel?
+Lan (Smug): Grateful?
+Florentine (Mad): Guilty. But also grateful. Don't let it go to your head.
+set {aff_florentine} += 1
+label enriko
+Enriko: You scared the absolute life out of me.
+Enriko: I ran the entire way from the lower district and I still didn't make it in time, and I have been furious about that every day since.
+Lan (Default): You made it in time for the part that mattered. Richard and Ingrid showing up wasn't luck.
+Enriko: That was me, actually.
+Enriko: When I realized I wasn't going to make the green on foot, I diverted to the Order of Knights' nearest post and told them everything.
+Enriko: Kliam, the target, the timing. Richard and Ingrid were the two closest to combat-ready.
+Enriko: I got lucky they were the ones who happened to be there.
+Lan (Smile): You saved my life from three streets away. That's not luck. That's just you.
+Enriko didn't have a joke ready for that, which told Lan more than any answer would have.
+set {aff_enriko} += 2
+label veldero
+Veldero: I couldn't stop it. The stab. I saw it coming a half-second too late and I've replayed that half-second more times than I want to admit.
+- "You kept me alive for four minutes."
+	set {aff_veldero} += 1
+	Lan (Default): You kept me alive for four minutes against a man who could've ended both of us in one. I don't blame you for the half-second you didn't have.
+	Veldero: I know that logically. Working on believing it.
+- "What did you see?"
+	Lan (Sus): What did you see? Right before.
+	Veldero: Nothing. That's the problem. There was nothing there. It just[pause=0.35][lspeed=0.25!]...[lspeed] appeared.
+label ilia
+Dialog/Ilia (Def): I'm not going to make a joke.
+Dialog/Ilia (Def): I thought about six different ones on the walk over and none of them felt right,
+Dialog/Ilia (Def): which has genuinely never happened to me, so consider this a historic occasion.
+Dialog/Ilia (Happy): You gave me a real scare, sixty-seven. I don't sit up nights worrying about most of the people I spar with. Heal up.
+Dialog/Ilia (Happy): I've got a rematch to collect on eventually, and it's no fun beating someone who's still recovering.
+set {aff_ilia} += 2
+label leonora
+Leonora came the next morning, alone, and closed the door behind her with a quiet deliberateness that told Lan this wasn't a social visit.
+Leonora (Default): I know who authorized the gap in the forest patrol. I've known for four days.
+Leonora (Default): I didn't come sooner because I needed to be certain, and because once I said it aloud I couldn't unsay it.
+Leonora (Mad): My brother. Edric.
+Leonora (Mad): Second in line, which he's spent his life resenting, because second in line means nothing if the first keeps breathing and doing her duty competently.
+Leonora (Mad): He arranged the ambush in the forest. Both prongs, mine and Raiz's.
+Leonora (Mad): Meant to look like each country struck the other first.
+Leonora (Mad): Meant, I think, to make me look weak enough, or dead enough, that the succession answered itself.
+Leonora (Default): I don't have proof that would hold up publicly.
+Leonora (Default): I have proof that satisfies me completely, which is a different and more dangerous thing to carry around.
+Leonora (Default): I asked you to tell me anything that kept me alive, the moment you could. You never did. I've wondered whether you already knew.
+- "I suspected. I had no proof."
+	set {aff_leonora} += 1
+	Lan (Default): I suspected. I didn't have proof either.
+- "I had a bad feeling. Nothing more."
+	set {aff_leonora} += 1
+	Lan (Acting): A bad feeling. Nothing I could have handed you.
+Lan (Default): I still don't have anything I could have handed you that would have helped more than waiting.
+It wasn't the whole truth. It was closer than anything he'd given her before.
+Leonora (Default): When I have proof, you'll be the first I tell. Not because I trust you completely.
+Leonora (Default): Because you've earned that much, and I intend to keep exact accounts.
+Leonora (Smile): Rest. You look terrible. I mean it kindly.
+label raiz_note
+A folded note lay on the bedside table, left with the infirmary orderly. Neat, blunt handwriting.
+Raiz: Schwert. Han was fast and stupid. Kliam is slow and clever.
+Raiz: You lost to the second because you tried to beat him with the first's plan. Learn the difference. Al Khalid.
+if {aff_raiz} >= 2:
+	A second line was written below, smaller. "If you want to argue the point, I will listen."
+	set {aff_raiz} += 1
+else:
+	Lan (Sus): (Rank one writes to rank whatever I am. I didn't expect that.)
+label amir
+Amir came the following afternoon, and Lan hadn't expected him at all. He didn't sit. He stood at the foot of the bed with his arms crossed.
+Amir: You've had a hard few months. Hiding what you are.
+Amir: Getting found out anyway, piece by piece, by people who kept your secret instead of using it.
+Amir: Nearly dying for a girl who isn't even in your department, against a man three tiers above anything this academy trains its first-years to survive.
+Amir: I know what that weighs like, boy. I've carried worse versions of it myself.
+Lan (Default): I'm managing.
+Amir: You're surviving. Those aren't the same thing.
+Amir: I want to make you an offer. My assistant.
+Amir: Officially, on the record, so nobody asks awkward questions about why a first-year keeps disappearing into my training hall after hours.
+Amir: I'll teach you properly. Full use of your gi, not the careful trickle you've been rationing.
+Amir: And it's time somebody started you on shir as well. You've got the discipline.
+Amir: You've simply never had anyone willing to spend the time.
+- "I need a few days."
+	Lan (Default): Give me some time. I just woke up.
+- "Let me think about it."
+	Lan (Smug): Let me think about it. I'm still mostly bandages.
+Amir: The offer doesn't come with an expiration. When you're ready, my door's open.
+Amir: Berthram already knows I'm asking. He approves. Make of that whatever you like.
+Then he was gone, and Lan lay back against the pillows with a great deal more to think about than the ache still sitting deep in his spine,
+and, somewhere under it, the first real flicker of something that might, eventually, become hope.
+[signal arg="chapter_end:ch14"]
+[end_timeline]

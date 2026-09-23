@@ -29,5 +29,9 @@
 	Lan (Acting): Please Don't I'll Behave This Time
 	Liesel (Smug): I know u want that..
 	[end_timeline]
+- Training
+	Dialog/Ilia (Happy): Alright, let's see what you've got!
+	[signal arg="start_training"]
+	[end_timeline]
 - Exit
 	[end_timeline]

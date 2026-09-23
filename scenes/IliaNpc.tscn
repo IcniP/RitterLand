@@ -243,12 +243,13 @@ height = 49.999996
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xo8nd"]
 size = Vector2(45.000004, 99.99999)
 
-[node name="IliaNpc" type="CharacterBody2D" unique_id=599916813]
+[node name="IliaNpc" type="CharacterBody2D" unique_id=599916813 node_paths=PackedStringArray("animated_sprite")]
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_bx7g8")
 dialogue_timeline = "res://Dialog/timeline.dtl"
 interact_prompt = "E To Talk"
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=966778744]
 y_sort_enabled = true

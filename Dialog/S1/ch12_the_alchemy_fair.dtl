@@ -1,0 +1,86 @@
+label remembered
+[signal arg="bg:support_board"]
+The notice went up on the Support Department board a week before it happened.
+The Autumn Alchemy Exposition, on the capital's exhibition green, open to the public and to every noble house with an interest in patronage.
+Guild scouts would attend.
+Lan (Sus): (The Alchemy Exposition.)
+Lan (Sus): (In most playthroughs, Florentine walks away with a guild sponsorship, the first real foothold out of the slums.)
+Lan (Sus): (In the others, someone sabotages her publicly at the fair, salts her name, and a year and a half later she's back as a very different character.)
+Lan (Sus): (The Evil Alchemist. Queen of a poison trade that ran half the continent's underworld.)
+Lan (Sus): (I don't know which version of the trigger is coming. I only know I won't find out the hard way.)
+Florentine (Flat): Absolutely not.
+Florentine (Flat): The last time you got involved in something concerning me, Han's boot was on my satchel and you nearly started a war over spilled mint.
+Florentine (Flat): I don't need a bodyguard. I need people to stop assuming I need one.
+Lan (Talk): I think something's going to happen at the fair.
+Florentine (Flat): Based on what?
+Lan (Sus): (Based on two thousand four hundred and fifty hours of a video game you'll never believe exists.)
+Lan (Default): A feeling. Call it instinct.
+Florentine (Flat): Call it a rank {rank} with a hero complex.
+Lan (Default): She'd throw me out on principle. If Veldero's there too, she might let us stay close enough to be useful.
+Veldero: You really think something's going to happen?
+Lan (Default): I really do.
+Veldero: Then I'm in. I'll talk to her. She likes me more than she likes you, which I say with love.
+Liesel (Smile): I've read her formulary notes. Her extraction technique on volatile compounds is better than anything they taught us.
+Liesel (Smile): I'm not doing this as a favor. I want to watch her work.
+Florentine agreed on one condition.
+Neither of them hovered, wore anything that looked like armor, or used the word bodyguard within earshot of a paying customer.
+label green
+[signal arg="bg:exhibition_green"]
+The exhibition green sat just outside the capital's western gate, a wide stretch of trimmed grass gone chaotic with striped canopy tents,
+guild banners and more foot traffic than Lan had seen since the opening ceremony.
+Florentine's booth sat in the third row, modest and slightly undersized.
+Labeled vials of burn salve and clotting powder, a shimmering blue antidote base, and, centerpiece,
+a tall glass column of something that glowed faintly gold and turned on its own current.
+Liesel (Smile): That's beautiful. What's the suspension medium?
+Florentine (Flirt): Trade secret. I'll tell you after the judging. Maybe.
+Liesel (Smug): I could just test it.
+Florentine (Default): You could. I'd notice, and I'd never trust you with anything interesting again.
+Veldero: See anything?
+Lan (Default): Not yet. I'm sure it's this fair. I don't know the hour. I don't know the shape it takes. Just that if it works, she doesn't get a second fair.
+label watch
+The afternoon wore on in the grinding tension of watching a crowd for a threat that refused to announce itself.
+On his third pass Lan clocked a man.
+Middle-aged, well-dressed in the understated way that meant real money, moving with the patience of someone with nowhere else to be.
+He'd walked past Florentine's booth twice without buying anything or asking a question.
+He paused at the larger booth next door, run by an established guild house, and exchanged a few quiet words with its owner.
+Lan (Talk): Veldero.
+Veldero: I see him.
+They split without discussing it, Veldero drifting toward the man's likely path, Lan angling back toward the booth, close enough to count.
+Lan (Sus): (Fourteen vials on the left shelf this morning. Fifteen now.)
+label vial
+Lan reached the shelf in four unhurried steps,
+picked up the extra vial before Florentine finished turning to greet a new customer, and understood the moment it was in his hand.
+Small. Unmarked. White, chalky, pressed into a shape he'd last seen skitter across the courtyard flagstones.
+Lan (Sus): (Kliam's pills. Here. In her stock.)
+Florentine (Mad): That's not mine. I've never seen that vial in my life.
+Lan (Default): I know. Someone planted it. Probably counting on a guild scout finding it during the judging walk-through instead of you finding it now.
+Florentine (Flat): Framed. For dealing. That would have ended everything.
+Across the green, Veldero had closed on the well-dressed man without appearing to hurry.
+Lan watched him say something too quiet to carry,
+and the man's easy patience cracked for just a second before he turned and walked briskly toward the western gate.
+The man was a paid representative of the Voss Guild's flagship stall.
+- Pocket the vial quietly
+	Lan (Sus): (Nobody saw. If I make a scene, she becomes the story.)
+- Pocket it and crack a joke
+	set {aff_florentine} += 1
+	Lan (Smug): Well. That's one product I won't be sampling.
+Lan (Default): It didn't happen. Let's keep it that way.
+Liesel (Flat): It didn't work. That's what matters right now.
+label ask_veldero
+Veldero jogged back a moment later, slightly out of breath.
+Veldero: Guild representative. Paid rather than family, I think.
+Veldero: He didn't confirm anything, but he didn't deny it very convincingly either,
+Veldero: and he left in an enormous hurry for a man who claimed he'd never heard of you.
+- Ask what he said to him
+	Lan (Sus): What did you say to him?
+	Veldero: Nothing clever. I told him I knew where he worked.
+- Don't push
+	Lan (Default): Good work.
+Florentine (Flat): Voss Guild. Of course. They've been undercutting my supplier for two years.
+Florentine (Flat): A beastfolk pulling in scout attention at the same fair as their flagship display would have been[pause=0.35][lspeed=0.25!]...[lspeed]
+Liesel (Default): It didn't work. That's what matters right now.
+Lan slipped the vial into his own pocket, the small chalky weight of it like a coal that hadn't finished cooling.
+Lan (Sus): (One threat, caught in time. Later than I'd like. But caught.)
+He didn't yet know how wrong he was about the day being over.
+[signal arg="chapter_end:ch12"]
+[end_timeline]

@@ -19,29 +19,101 @@ config/icon="res://icon.svg"
 
 Dialogic="*uid://ds2q0uclmolvu"
 Global="*uid://dp2wqkyd0tw4g"
+Cutscene="*res://Scripts/core/Cutscene.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"Amir": "res://Dialog/S1/characters/Amir.dch",
+"Berthram": "res://Dialog/S1/characters/Berthram.dch",
+"Dave": "res://Dialog/S1/characters/Dave.dch",
 "Dialog/Ilia": "res://Dialog/Ilia.dch",
+"Doc": "res://Dialog/S1/characters/Doc.dch",
+"Dockhand": "res://Dialog/S1/characters/Dockhand.dch",
+"Enriko": "res://Dialog/S1/characters/Enriko.dch",
 "Florentine": "res://Dialog/Florentine.dch",
+"Han": "res://Dialog/S1/characters/Han.dch",
+"Hooded": "res://Dialog/S1/characters/Hooded.dch",
 "Ilia": "res://scenes/Ilia.dch",
+"Ingrid": "res://Dialog/S1/characters/Ingrid.dch",
+"Jack": "res://Dialog/S1/characters/Jack.dch",
+"Kliam": "res://Dialog/S1/characters/Kliam.dch",
 "Lan": "res://Dialog/Lan.dch",
 "Leonora": "res://Dialog/Leonora.dch",
 "Liesel": "res://Dialog/Liesel.dch",
 "Luna": "res://Dialog/Luna.dch",
+"Narr": "res://Dialog/S1/characters/Narr.dch",
+"Raiz": "res://Dialog/S1/characters/Raiz.dch",
+"Richard": "res://Dialog/S1/characters/Richard.dch",
 "Rin": "res://Dialog/Rin.dch",
+"Veldero": "res://Dialog/S1/characters/Veldero.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
 "Dialog/timeline": "res://Dialog/timeline.dtl",
+"ch00_prologue": "res://Dialog/S1/ch00_prologue.dtl",
+"ch01_welcome_to_ritterland": "res://Dialog/S1/ch01_welcome_to_ritterland.dtl",
+"ch02_eighty_four_names": "res://Dialog/S1/ch02_eighty_four_names.dtl",
+"ch03_only_the_sword": "res://Dialog/S1/ch03_only_the_sword.dtl",
+"ch04_parties_of_three": "res://Dialog/S1/ch04_parties_of_three.dtl",
+"ch05_questions_for_a_schwert": "res://Dialog/S1/ch05_questions_for_a_schwert.dtl",
+"ch06_the_price_of_a_guard": "res://Dialog/S1/ch06_the_price_of_a_guard.dtl",
+"ch07_the_east_wing": "res://Dialog/S1/ch07_the_east_wing.dtl",
+"ch08_the_switch": "res://Dialog/S1/ch08_the_switch.dtl",
+"ch09_what_the_corruption_left_behind": "res://Dialog/S1/ch09_what_the_corruption_left_behind.dtl",
+"ch10_the_challenge": "res://Dialog/S1/ch10_the_challenge.dtl",
+"ch11_the_weight_of_being_seen": "res://Dialog/S1/ch11_the_weight_of_being_seen.dtl",
+"ch12_the_alchemy_fair": "res://Dialog/S1/ch12_the_alchemy_fair.dtl",
+"ch13_fang": "res://Dialog/S1/ch13_fang.dtl",
+"ch14_what_he_woke_to": "res://Dialog/S1/ch14_what_he_woke_to.dtl",
+"ch15_the_quiet_months": "res://Dialog/S1/ch15_the_quiet_months.dtl",
 "tweaker": "res://Dialog/tweaker.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Dialog.tres",
 "Dialog": "res://Assets/Dialog.tres"
 }
-variables={}
+variables={
+"aff_enriko": 0,
+"aff_florentine": 0,
+"aff_ilia": 0,
+"aff_leonora": 0,
+"aff_liesel": 0,
+"aff_luna": 0,
+"aff_raiz": 0,
+"aff_veldero": 0,
+"amir_accepted_early": 0,
+"combat_won": 0,
+"edric_named_early": 0,
+"enriko_ran": 0,
+"exposure": 0,
+"han_grudge_high": 0,
+"ilia_deal": 0,
+"kliam_captured": 0,
+"leonora_promise": 0,
+"leonora_told_suspected": 0,
+"leonora_wounded": 0,
+"liesel_joined": 0,
+"liesel_pitch_honest": 0,
+"luna_letter_seen": 0,
+"pe_marks_seen": 0,
+"pitch_tries": 0,
+"rank": 67,
+"rank_points": 0,
+"resolve_board": 0,
+"sandbagged_leonora": 0,
+"stat_control": 2,
+"stat_shir": 0,
+"stat_sword": 6,
+"stood_up_courtyard": 0,
+"told_berthram_truth": 0,
+"told_friends_something_coming": 0,
+"took_duel_bait": 0,
+"trial_held_back": 0,
+"used_montante_clearing": 0,
+"veldero_tells": 0,
+"voss_confronted": 0
+}
 layout/style_list=["res://Assets/Dialog.tres"]
 layout/default_style="res://Assets/Dialog.tres"
 glossary/default_case_sensitive=true
@@ -55,7 +127,7 @@ animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.0
+animations/cross_fade_default_length=0.35
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -77,7 +149,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-animations/cross_fade_default="Fade Cross"
+animations/cross_fade_default="Stardew Cross"
 animations/join_default="Instant In"
 animations/leave_default="Instant Out"
 

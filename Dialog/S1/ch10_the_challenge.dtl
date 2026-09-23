@@ -1,0 +1,99 @@
+label bait
+[signal arg="bg:courtyard_cafeteria"]
+Lunch break was the worst possible time for a public humiliation, which was exactly why they'd chosen it.
+Han and Jack came into the courtyard cafeteria flanked by three or four hangers-on who had the look of people who'd been promised a show.
+Han: Schwert. I want a proper match.
+Han: Blades, rules, an actual venue, not some back-alley scuffle where you get to cheat with joint locks. Right here.
+Han: Let everyone see what a rank {rank} actually is.
+Lan (Default): Pass.
+Han: Scared?
+Lan (Smug): Bored.
+A ripple of laughter went through the crowd, which did Lan no favors.
+Han's face went a shade darker, and Jack stepped up with a sneer he'd clearly rehearsed.
+Jack: He's not a real swordsman, that's the whole point. What he did to us wasn't skill, it was luck and dirty tricks.
+Jack: There's no art to hitting someone because you got lucky twice. Real fencing takes years.
+Jack: What he does is flailing until something breaks. Commoner brawling with extra steps.
+Han: I heard he only beat the Princess because she wasn't trying.
+Han: And that forest business, probably just got in the way of real fighters. No art to any of it.
+Han: A farm boy who got lucky a few times and let everyone believe it meant something.
+Lan (Mad): (No art to it.)
+Lan (Sus): (I heard that in another life, from judges who scored a bout on flash instead of structure.)
+Lan (Sus): (It never bothered me then, because I had trophies to answer with. I didn't expect it to still have teeth.)
+Lan (Sus): (I know I'm being baited. It doesn't matter.)
+- Stand up
+	Lan (Default): Liesel, hold my plate.
+- Finish the bite first
+	Lan (Smug): One second. I'm mid-bite.
+	set {aff_liesel} += 1
+	Lan (Default): Liesel, hold my plate.
+Liesel (Flat): Lan...
+Lan (Smug): I'll be quick.
+Han's grin came back, delighted, and Lan understood with perfect, retroactive clarity exactly how thoroughly he'd been played.
+label first_exchanges
+[signal arg="bg:courtyard_ring"]
+They cleared a ring in the courtyard the way courtyards always did for this kind of thing.
+Han drew a rapier and fell into a textbook Britannic stance. Lan drew a standard practice longsword from the rack.
+No montante today. No reason to have brought it to lunch.
+Han: First blood, or first surrender. Nothing lethal. We're not animals.
+Lan (Default): Fine.
+Han opened with a Shir-assisted thrust, a thin thread of gi down his blade. Competent, not dangerous.
+The kind of skill you got from expensive tutors, never tested against anything that wanted to kill you.
+[signal arg="combat:duel_han_phase1"]
+Lan (Combat): (Give ground for three exchanges. Read the rhythm. Then stop giving ground.)
+He caught the fourth thrust on a Zwerchhau, a cross-cut that redirected the point wide of his ribs, and closed the distance in the same motion.
+Han's confident footwork faltered. A murmur went up from the crowd.
+Lan (Smug): (Annoyed, not struggling. There's a difference, and I'm making sure it shows.)
+He pushed Han back another two steps, and something small and pale fell out of the noble's jacket and skittered across the flagstones between them.
+A small, unmarked white pill.
+Lan (Sus): (That's not supposed to exist yet.)
+Han scooped it up and swallowed it whole.
+label three_days
+[signal arg="interlude:on"]
+[signal arg="bg:old_stables"]
+THREE DAYS EARLIER. A disused storage room behind the old stables, no windows, one lantern.
+A figure with a hood low enough that neither Han nor Jack could have described one feature of the face beneath it afterward.
+Hooded: You're upset. A commoner humiliated you. Twice, now, if you count the princess intervening. That must sit badly with someone of your standing.
+Jack: Who are you?
+Hooded: Someone who'd rather see the two of you win than lose. There's a man named Kliam.
+Hooded: He operates out of the lower district, and he sells compounds that borrow gi from a source other than your own body.
+Hooded: Enough of an edge to make sure the next time you meet your commoner problem, the outcome goes the way it should have gone the first time.
+Hooded: Give him this name. He'll know what it means.
+Han unfolded the slip of paper. Two letters, nothing more. P.E.
+Han: That's supposed to mean something?
+Hooded: It will. Enjoy your match, gentlemen.
+[signal arg="interlude:off"]
+label pill
+[signal arg="bg:courtyard_ring"]
+The change didn't happen slowly. One moment Han was a boy in retreat.
+The next his stance snapped straight, the thread of shir along his blade thickened into a rope, and his eyes went glassy and overbright.
+Han: Now. Let's see your art.
+He came in fast enough that the crowd gasped, and Lan's easy guard nearly cost him an eye.
+Lan (Combat): (Okay. Real fight now.)
+[signal arg="combat:duel_han_phase2"]
+Han's borrowed strength was a river with no banks, fast and heavy.
+Lan took a cut along his forearm learning how much respect it deserved. The answer was a lot.
+Lan (Combat): (Don't match it. Redirect it. Let his own overcommitted lunges carry him past his guard until he's gassing himself on momentum he can't control.)
+Two more cuts, one along the ribs, one across the knuckles.
+Then, on Han's eleventh lunge, Lan stepped inside the reach of the rapier entirely and put the flat of the longsword across his wrist.
+The rapier hit the flagstones a full second before Han did. The borrowed strength guttered out of him like a candle pinched between two fingers.
+The courtyard had gone completely silent.
+label after
+Nobody had ever watched a rank {rank} fight a rank five who was very publicly, if nobody quite understood how, fighting with something extra, and win anyway, bleeding from three places.
+Liesel (Flat): You're an idiot.
+Lan (Default): I'm aware.
+Liesel (Default): He said three sentences and you threw your entire plan away. What did he say that mattered that much?
+Lan (Sus): (No art to it. A farm boy who got lucky.)
+Lan (Default): Nothing important. Just noise that landed wrong.
+Liesel gave him a long look that said she didn't believe him and had decided, for now, to let it go.
+Lan (Sus): (That pill wasn't supposed to exist. Kliam wasn't supposed to be connected to a noble brat this early.)
+Lan (Sus): (Something's already moving that I don't have a script for, and I don't know whose hand is on it.)
+label leonora
+[signal arg="bg:records_office"]
+Across the academy, in a records office that smelled of old parchment and colder ambition,
+Leonora von Rosendael sat with three incident reports from the private forest, cross-referencing timestamps against duty rosters.
+She found the gap on her fourth pass.
+A window forty minutes wide, unaccounted for on the exact day of the ambush, in the exact section of forest that mattered.
+She did not yet know whose signature belonged on the authorization that had created it.
+She intended to find out.
+[signal arg="chapter_end:ch10"]
+[end_timeline]

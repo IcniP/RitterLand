@@ -1,0 +1,46 @@
+label start
+[signal arg="bg:apartment_night"]
+The victory screen had been up for eleven minutes.
+He hadn't moved.
+His right forearm ached the way it always did past midnight, a slow, deep pull along a ligament three surgeons had called fully healed.
+It had been "fully healed" for four years. It still woke him at three in the morning.
+It still would not close all the way around anything heavier than a coffee cup.
+Lan (Sus): (The worst part was never the pain. The worst part was that I was winning.)
+Two exchanges from the title match. A downward diagonal cut, a zornhau, thrown ten thousand times before.
+His edge caught wrong. Then there was a sound, and then the ceiling.
+Lan (Default): (One cheap practice sword, held for two seconds. Then my hand stopped being a hand.)
+The monitor hummed.
+100% COMPLETION ACHIEVED. All Secret Trophies and Character Routes Unlocked. Total Playtime, 2,450 hours.
+Lan (Sus): (Four years of a life, turned into a number.)
+Ritterland. Brutal, beautiful, and famous for being unfair.
+A continent split by old wars, with the knight-scholars of Ritterland, the tower-mad empire of Britannic Arcana,
+the star-reading courts of Al-Tale'a, the ice halls of Nordvinter, the island kings of Nusantara, and the quiet blades of Asahigawa.
+Two powers run the world. Gi, the engine inside every living body.
+Shir, that same energy pushed outside the body and shaped into fire, shields, illusions and healing.
+And underneath it all, patient and sleeping, the Evil God, and the sickness called Gi Corruption that came with him.
+Lan (Sus): (Every ending, every perfect run, the game demands payment. Friends die. Whole countries come off the map.)
+Lan (Sus): (Nobody ever finds the version where nobody pays.)
+Lan (Default): Another perfect save file.
+No one was going to call. No one had called in a while.
+Lan (Sus): (There's a kind of grief that's loud, and a kind that's just a very quiet apartment. I know which one I got.)
+He reached for the mouse to shut it down. The screen glitched.
+The color drained out of the victory banner, and red words surfaced one letter at a time.
+SYSTEM NOTIFICATION, UNKNOWN SOURCE. You have cleared all standard scenarios. Yet the world's true collapse remains inevitable.
+Would you like to unlock and reach the TRUE ENDING?
+Lan (Sus): (There is no true ending. I read the raw files. I went through everything the developers cut. It isn't in the code.)
+Lan (Sus): (A virus, a prank, or my graphics card dying.)
+Lan (Sus): (What exactly am I protecting?)
+label prompt
+- YES
+	jump ch00_prologue/yes
+- NO
+	He moved the cursor to NO. The button dimmed. The red text did not go away. It began to type again, slower, as if amused.
+	WOULD YOU LIKE TO UNLOCK AND REACH THE TRUE ENDING?
+	Lan (Sus): (It's not going to let me leave it alone.)
+	jump ch00_prologue/prompt
+label yes
+Lan (Default): Fine.
+He clicked. The hum climbed past what he could hear. Light poured out of the screen, and it had weight. It leaned into him.
+The last thing he noticed was that, for the first time in four years, his right hand had closed all the way shut.
+[signal arg="chapter_end:ch00"]
+[end_timeline]

@@ -239,14 +239,13 @@ animations = [{
 radius = 18.0
 height = 49.999996
 
-[node name="Ilia" type="CharacterBody2D" unique_id=599916813]
+[node name="Ilia" type="CharacterBody2D" unique_id=599916813 node_paths=PackedStringArray("animated_sprite")]
 y_sort_enabled = true
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_md0e3")
-max_hp = 3
-max_sp = 2
 spd = 2
-atk = 1
+atk = 10
+animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=966778744]
 y_sort_enabled = true

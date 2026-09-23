@@ -5,6 +5,8 @@ class_name EnemyNPC
 extends EntityBase
 
 @export var enemy_id: String = "enemy"
+## XP given to the party when this enemy is killed (fight is won).
+@export var xp_reward: int = 10
 @export var loot_table: Array[String] = []   # PLACEHOLDER: item ids
 @export var ai_aggression: float = 1.0        # 0..1, feed into smarter AI later
 

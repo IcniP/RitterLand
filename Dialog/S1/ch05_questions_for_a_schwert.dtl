@@ -1,0 +1,85 @@
+label summons
+[signal arg="bg:dorm_room_night"]
+The note was waiting on his bunk before he'd even changed out of his forest clothes, still smelling of pine and someone else's blood.
+Headmaster's office. Tonight. Don't make me send someone to fetch you.
+Lan (Sus): (One condition. You'll answer some questions about your family. Honestly.)
+Lan (Sus): (I've had a year to prepare an answer and the honest one is still I don't know.)
+He left the montante where it was. Whatever this conversation needed, he didn't think it needed a sword.
+label office
+[signal arg="bg:headmaster_office"]
+Berthram's office was smaller than Lan expected and considerably messier.
+Paper stacked at angles, a sword on the wall that had never been cleaned for display, and a window standing wide open despite the evening chill.
+Berthram sat with his boots on the desk and an apple in one hand, and none of the cheerful haze he wore in public. His eyes were entirely clear.
+Berthram: Sit.
+Berthram: You want to tell me why a rank {rank} commoner spent this afternoon cutting through six trained killers to protect a crown princess like he'd done it a hundred times before?
+Lan (Acting): Would "I panicked and it went well" be an acceptable answer?
+Berthram: It would be a creative answer. It would also be a lie, and I'd know the second it left your mouth.
+Berthram: I watched you in a forest a year ago hold off a beast that should have killed you twice over.
+Berthram: I know what raw talent looks like, and I know what trained looks like,
+Berthram: and what you did in that clearing was the second one, dressed up carefully to look like the first.
+Berthram: You've been hiding your strength since you walked through my gate.
+Berthram: I let it go because a boy's reasons for laying low are his own business.
+Berthram: Today a princess of Britannic Arcana has watched you fight for real, and her questions are no longer just her business.
+Berthram: They're mine.
+Berthram: So. Start with the part I asked for a year ago. Your father. Tell me about him.
+Lan (Default): Narr Schwert. Farmer, mostly. Woodcutter.
+Lan (Default): Raised me in a valley in the Ritterland highlands until I was ten,
+Lan (Default): then sent me out to make my own way, same as the rest of the family does with every child.
+Berthram: Every child.
+Lan (Default): It's tradition. Nobody teaches you gi, shir or the sword until you turn ten.
+Lan (Default): Then you're exiled with a wooden sword and told not to come back until you've made a name for yourself.
+Lan (Default): I don't know why. I asked. Nobody would answer.
+Berthram: Before you were born. Do you know what he did, where he went, who he might have been?
+Lan (Sus): No. He's never talked about it.
+Lan (Sus): There was a trader once, when I was seven, who saw him chopping wood, went white as a sheet and turned his cart around.
+Lan (Sus): I asked at dinner. My father said the man would've known him back when people called him "the Fool."
+Lan (Sus): My mother didn't smile when he said it. She smiles at everything. That's the only reason I remember the conversation.
+The silence went on long enough that Lan started counting his own heartbeats.
+Berthram: The Fool.
+Lan (Default): That mean something to you?
+Berthram: It means I spent the better part of my thirties hunting a masked lunatic who humiliated half the corrupt nobility on this continent with nothing but a stick and a gift for making grown men weep in front of their own soldiers.
+Berthram: I never once laid a hand on him. He disappeared near enough thirty years ago.
+Berthram: Your father's name is Schwert. A trader who recognized him went the color of old paper.
+Berthram: And you, a boy raised with no formal training who moves like he's been drilled by a master since birth, walk through my gate.
+Lan (Sus): You think my father is the Fool.
+Berthram: I think I don't know, and not knowing will keep me up at night for a while yet.
+Berthram: I also think, watching your face, that you genuinely didn't know either.
+Lan (Smile): That's actually a relief. I've spent a year assuming I was the crazy one for thinking something didn't add up.
+Berthram: You weren't crazy. You were correct, and outmatched by people considerably better at keeping secrets than you are at finding them.
+label truth
+Berthram: One more thing, and this is the only question I'll press. Why the act? Why hide it from the day you arrived?
+- "I don't want to be recruited."
+	Lan (Default): I don't want to be recruited. Into anything.
+- "Peace and quiet, mostly."
+	Lan (Smug): Peace and quiet, mostly. I hear recruiters have terrible timing.
+	Berthram: Hm. Go on.
+Lan (Default): The moment people see what I can actually do, I stop being a student and start being an asset.
+Lan (Default): Assets get pointed at things whether they want to be or not.
+Lan (Default): I'd rather be underestimated and free than impressive and owned.
+Berthram: That is the single most reasonable thing anyone under thirty has ever said in this office.
+Berthram: It's also going to fail completely, starting today, but I respect the instinct.
+label arrangement
+Berthram: Here is what I'm prepared to do. I won't announce what I was told today.
+Berthram: I won't strip your rank or drag you in front of the faculty.
+Berthram: I can't do anything about the princess's memory, but I can keep the rest of this school from finding out the way she did.
+Lan (Default): And in exchange.
+Berthram: You stop wasting my time pretending to be exactly as unremarkable as your file says. Not publicly.
+Berthram: Keep whatever act you need for the rest of the school. But you and I are done playing that game in private.
+Berthram: If something like today happens again, you come to me before it happens if you can, and after if you can't.
+Berthram: And before the year's out, you sit down with me properly and we talk about your family,
+Berthram: once you've thought about what you actually want to ask your father next time you go home.
+Lan (Smile): That's fair.
+Berthram: I know it is. I'm very good at my job.
+Berthram: One more thing.
+Berthram: Whatever you were venting out there today,
+Berthram: and don't think I didn't notice you were enjoying yourself somewhere around the third one, I'd like to see it again.
+Berthram: In a context that doesn't involve assassins.
+Berthram: You've got a teacher in this building who knows what to do with a blade like that. It isn't Nazr, and it isn't me.
+Berthram: Go home. Sleep.
+Berthram: For what it's worth, if your father really is who I think he is,
+Berthram: he did more good under that mask than most knights manage in a lifetime under their own names.
+Berthram: Whatever your family's hiding from you, I don't think it's shame.
+Lan let himself out into the cold and walked back across the dark quad with a great deal more to think about than he'd had that morning.
+[signal arg="mission_unlock"]
+[signal arg="chapter_end:ch05"]
+[end_timeline]

@@ -10,11 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://ghtp0b56j8fa" path="res://scenes/lan.tscn" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://dqr73vwd8763m" path="res://Scripts/ui/PlayerInputHandler.gd" id="8_hve3p"]
 [ext_resource type="PackedScene" uid="uid://de0utkrd0wlee" path="res://scenes/IliaNpc.tscn" id="9_7sc4i"]
-[ext_resource type="Script" uid="uid://4vg7gsnmy4a1" path="res://Scripts/entities/PartyNPC.gd" id="9_215e1"]
 [ext_resource type="Script" uid="uid://cafpvipd5p4jq" path="res://Scripts/core/TurnManager.gd" id="9_mfdv2"]
 [ext_resource type="Script" uid="uid://csm4t6ck7j2wq" path="res://Scripts/core/FreeCam.gd" id="11_mfdv2"]
 [ext_resource type="Script" uid="uid://dep2ews6h33uw" path="res://Scripts/core/CombatManager.gd" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://c2f7yhpra33hb" path="res://scenes/enemy.tscn" id="15_7sc4i"]
+[ext_resource type="Script" uid="uid://cohyjd6dx1n1k" path="res://Scripts/core/PartyRoster.gd" id="30_roster"]
+[ext_resource type="Script" uid="uid://2230cajf70t7" path="res://Scripts/resources/PartyMemberEntry.gd" id="31_entry"]
+[ext_resource type="Script" uid="uid://dr7y0hu31geig" path="res://Scripts/ui/PauseMenu.gd" id="32_pause"]
+[ext_resource type="Script" uid="uid://vjwgwl63ychk" path="res://Scripts/ui/CombatHUD.gd" id="33_hud"]
 
 [sub_resource type="GDScript" id="GDScript_7jktm"]
 script/source = "extends Node2D
@@ -192,6 +195,12 @@ sources/2 = SubResource("TileSetAtlasSource_ryrav")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(96, 176)
 
+[sub_resource type="Resource" id="Resource_ilia_entry"]
+script = ExtResource("31_entry")
+character_scene = ExtResource("1_80nbo")
+unlocked = true
+in_party = true
+
 [node name="game" type="Node2D" unique_id=2129578767]
 position = Vector2(-1, 0)
 script = SubResource("GDScript_7jktm")
@@ -214,23 +223,11 @@ position = Vector2(-15, 16)
 y_sort_enabled = true
 position = Vector2(389, 172)
 spd = 2
-is_player_controlled = true
 
 [node name="ObjectLayer" type="TileMapLayer" parent="Y-sort" unique_id=117145078]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAKAAEAAQAAAAQAAAAMAAEAAQAAAAQAAAAOAAEAAQAAAAQAAAAOAAMAAQAAAAQAAAAMAAMAAQAAAAQAAAAKAAMAAQAAAAQAAAAKAAUAAQAAAAQAAAAMAAUAAQAAAAQAAAAOAAUAAQAAAAQAAAAgAAsAAAABAAAAAAAgAAcAAAABAAAAAAAgAAMAAAABAAAAAAAgAAAAAAABAAAAAAAgAAwAAAABAAEAAAAfAA0AAAABAAIAAAAZAA0AAAABAAIAAAAWAA0AAAABAAIAAAAVAA0AAAAAAAIAAAAVAAsAAAABAAAAAAAfAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAXAAsAAAAAAAMAAAAYAAsAAAABAAAAAAAeAA4AAAAAAAAAAAAfAA4AAAABAAAAAAAXAA4AAAAAAAAAAAAYAA4AAAABAAAAAAAbAAsAAAAAAAEAAAAVAAYAAAABAAAAAAAVAAEAAAABAAAAAAAVAP3/AAABAAAAAAAVAPz/AAABAAAAAAAUAPz/AAAAAAAAAAAUAAEAAAAAAAEAAAAQAAEAAQAAAAQAAAAQAAMAAQAAAAQAAAAQAAUAAQAAAAQAAAAQAAcAAQAAAAQAAAAOAAcAAQAAAAQAAAAMAAcAAQAAAAQAAAAKAAcAAQAAAAQAAAAhAA0AAAADAAMAAAAgAA0AAAACAAMAAAAhAAwAAAADAAIAAAAhAAkAAAADAAIAAAAhAAUAAAADAAIAAAAhAAIAAAADAAIAAAAhAAAAAAADAAEAAAAVAAMAAAABAAMAAAAVAAkAAAABAAMAAAAXAAMAAAAAAAMAAAAfAP3/AAAAAAMAAAAaAPz/AAAAAAMAAAASAA4AAAAAAAMAAAAQAAwAAAACAAEAAAAWAAUAAAADAAIAAAAWAAoAAAADAAIAAAAWAP//AAADAAIAAAAdAAwAAAADAAAAAAAZAAwAAAADAAAAAAAWAAwAAAACAAAAAAAcAAwAAAACAAAAAAAeAAsAAAACAAIAAAAYAA0AAAACAAMAAAAXAAgAAAABAAIAAAAUAAcAAAADAAAAAAAVAAgAAAAAAAEAAAAWAAcAAAACAAAAAAAWAAgAAAACAAMAAAAVAAcAAAABAAEAAAAUAAYAAAACAAEAAAAXAAYAAAAAAAAAAAAWAAkAAAADAAIAAAATAAoAAgADAAIAAAAHAAoAAgAAAAIAAAAIAP//AgAFAAAAAAAJAP//AgAGAAAAAAAKAP//AgABAAAAAAALAP//AgACAAAAAAAMAP//AgABAAAAAAANAP//AgACAAAAAAAOAP//AgABAAAAAAAPAP//AgACAAAAAAAQAP//AgAFAAAAAAARAP//AgAGAAAAAAASAP//AgABAAAAAAATAP//AgADAAAAAAAHAP//AgAAAAAAAAATAAAAAgACAAIAAAATAAEAAgACAAIAAAATAAIAAgACAAIAAAATAAMAAgACAAIAAAATAAQAAgACAAIAAAATAAUAAgACAAIAAAATAAYAAgAHAAAAAAATAAgAAgACAAIAAAATAAkAAgACAAIAAAAHAAkAAgABAAIAAAAHAAgAAgABAAIAAAAHAAcAAgABAAIAAAAHAAYAAgABAAIAAAAHAAUAAgABAAIAAAAHAAQAAgABAAIAAAAHAAMAAgABAAIAAAAHAAIAAgABAAIAAAAHAAEAAgABAAIAAAAHAAAAAgABAAIAAAAPAAoAAgABAAAAAAAQAAoAAgACAAAAAAANAAoAAgABAAAAAAAOAAoAAgACAAAAAAALAAoAAgABAAAAAAAMAAoAAgACAAAAAAAJAAoAAgABAAAAAAAKAAoAAgACAAAAAAAIAAoAAgACAAAAAAARAAoAAgAFAAIAAAASAAoAAgAGAAIAAAA=")
 tile_set = SubResource("TileSet_xrivr")
-
-[node name="IliaParty" parent="Y-sort" unique_id=553800768 instance=ExtResource("1_80nbo")]
-position = Vector2(334, 169)
-script = ExtResource("9_215e1")
-npc_id = "companion"
-follow_distance = 2.0
-is_recruited = false
-max_hp = 100
-max_sp = 50
-move_speed = 55.0
-portrait_icon = null
 
 [node name="IliaNpc" parent="Y-sort" unique_id=599916813 instance=ExtResource("9_7sc4i")]
 position = Vector2(263.00003, 114.99999)
@@ -255,9 +252,10 @@ script = ExtResource("13_lc2xo")
 
 [node name="CombatZone" type="Area2D" parent="." unique_id=1126601689]
 script = ExtResource("3_iotsf")
-enemy_scenes = Array[PackedScene]([ExtResource("15_7sc4i")])
-enemy_spawn_points = Array[NodePath]([NodePath("Marker2D")])
+enemy_scenes = Array[PackedScene]([ExtResource("15_7sc4i"), ExtResource("15_7sc4i")])
+enemy_spawn_points = Array[NodePath]([NodePath("Marker2D"), NodePath("Marker2D2")])
 combat_manager_path = NodePath("../CombatManager")
+battle_xp = 60
 repeatable = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CombatZone" unique_id=775625219]
@@ -266,3 +264,16 @@ shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Marker2D" type="Marker2D" parent="CombatZone" unique_id=1531056312]
 position = Vector2(399, 30)
+
+[node name="Marker2D2" type="Marker2D" parent="CombatZone" unique_id=1128052015]
+position = Vector2(469, 30)
+
+[node name="PartyRoster" type="Node" parent="." unique_id=1898259081]
+script = ExtResource("30_roster")
+entries = Array[ExtResource("31_entry")]([SubResource("Resource_ilia_entry")])
+
+[node name="CombatHUD" type="CanvasLayer" parent="." unique_id=308607523]
+script = ExtResource("33_hud")
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=641408913]
+script = ExtResource("32_pause")

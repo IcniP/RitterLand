@@ -33,6 +33,12 @@ const CHARGE_MAX := 100.0
 @export var animated_sprite: AnimatedSprite2D
 @export var portrait_icon: Texture2D  # PLACEHOLDER: UI portrait / turn-order icon
 
+## Key into Global.progress. "" = no progression (enemies). Lan becomes
+## "player" automatically; PartyRoster sets it for party members.
+var character_id: String = ""
+var level: int = 1
+var _base_stats: Dictionary = {}
+
 var facing_direction: Vector2i = Vector2i.DOWN
 
 ## Each entry: {"effect": StatusEffect, "turns_left": int}
@@ -44,12 +50,58 @@ signal sp_changed(new_sp, max_sp)
 signal charge_changed(new_charge)
 
 func _ready() -> void:
+	_base_stats = {"max_hp": max_hp, "max_sp": max_sp, "atk": atk, "def_stat": def_stat, "spd": spd}
+	if is_player_controlled and character_id == "":
+		character_id = "player"
 	hp = max_hp
 	sp = max_sp
+	if character_id != "":
+		refresh_stats(true)
+	if is_player_controlled:
+		Global.player = self
 
 func _physics_process(_delta: float) -> void:
 	if movement_mode == MovementMode.OPEN_WORLD and is_player_controlled:
 		_handle_open_world_movement()
+
+# ---------------- Skills ----------------
+
+## The (max 4) skills equipped for battle.
+func get_battle_skills() -> Array:
+	return SkillDB.get_loadout(character_id)
+
+func get_ultimate_skill() -> SkillData:
+	if character_id == "":
+		return null
+	return SkillDB.get_ultimate(character_id, level)
+
+# ---------------- Level / equipment stats ----------------
+
+func get_base_stats() -> Dictionary:
+	return _base_stats.duplicate()
+
+## Recompute max_hp/max_sp/atk/def/spd from base + level + points + gear.
+func refresh_stats(heal_to_full: bool = false) -> void:
+	if character_id == "" or _base_stats.is_empty():
+		return
+	var prog: CharacterProgress = Global.get_progress(character_id)
+	var s: Dictionary = Progression.compute_stats(_base_stats, prog)
+	var hp_gain: int = s["max_hp"] - max_hp
+	var sp_gain: int = s["max_sp"] - max_sp
+	max_hp = s["max_hp"]
+	max_sp = s["max_sp"]
+	atk = s["atk"]
+	def_stat = s["def_stat"]
+	spd = s["spd"]
+	level = prog.level
+	if heal_to_full:
+		hp = max_hp
+		sp = max_sp
+	else:
+		hp = clampi(hp + maxi(hp_gain, 0), mini(hp, max_hp), max_hp)
+		sp = clampi(sp + maxi(sp_gain, 0), mini(sp, max_sp), max_sp)
+	hp_changed.emit(hp, max_hp)
+	sp_changed.emit(sp, max_sp)
 
 # ---------------- Movement ----------------
 
@@ -63,6 +115,11 @@ func _handle_open_world_movement() -> void:
 	velocity = dir * move_speed
 	move_and_slide()
 	_update_animation(dir)
+
+## Called when combat starts so nobody is frozen mid-walk-animation.
+func stop_moving() -> void:
+	velocity = Vector2.ZERO
+	_update_animation(Vector2.ZERO)
 
 ## Used by CombatManager/PlayerInputHandler to animate a queued grid step.
 func move_to_grid_target(target_world_pos: Vector2) -> void:
@@ -96,6 +153,11 @@ func _direction_suffix() -> String:
 # ---------------- Buffs / Debuffs ----------------
 
 func apply_status_effect(effect: StatusEffect) -> void:
+	# Re-applying the same effect refreshes its duration instead of stacking.
+	for entry in active_effects:
+		if entry["effect"].id == effect.id:
+			entry["turns_left"] = effect.duration_turns
+			return
 	active_effects.append({"effect": effect, "turns_left": effect.duration_turns})
 
 ## Call once per combat turn (CombatManager._end_turn) to age out effects.
@@ -123,8 +185,9 @@ func get_effective_stat(stat: StatusEffect.StatType) -> int:
 
 # ---------------- Combat resource management ----------------
 
-func take_damage(amount: int, _attacker = null) -> void:
-	var effective_def := get_effective_stat(StatusEffect.StatType.DEF)
+## pierce = fraction of DEF ignored (0..1), used by magic skills.
+func take_damage(amount: int, _attacker = null, pierce: float = 0.0) -> void:
+	var effective_def := int(get_effective_stat(StatusEffect.StatType.DEF) * (1.0 - pierce))
 	var final_damage: int = max(amount - effective_def, 1)
 	hp = max(0, hp - final_damage)
 	hp_changed.emit(hp, max_hp)
@@ -162,6 +225,11 @@ func is_alive() -> bool:
 
 ## Generic hook for Global.modify_stat — permanent changes (leveling, gear).
 func modify_stat(stat_name: String, amount: int) -> void:
+	# Characters with progression: change the base and recompute everything.
+	if character_id != "" and _base_stats.has(stat_name):
+		_base_stats[stat_name] += amount
+		refresh_stats()
+		return
 	match stat_name:
 		"max_hp":
 			max_hp += amount

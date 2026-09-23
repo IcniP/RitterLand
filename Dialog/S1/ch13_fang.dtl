@@ -1,0 +1,100 @@
+label too_late
+[signal arg="interlude:on"]
+[signal arg="bg:lower_district_backroom"]
+INTERLUDE. Enriko had been three days into the lower district before he found anyone willing to say Kliam's name above a whisper.
+Dockhand: The Syndicate's been quiet lately. Too quiet. They've got a job on. Big one. Word is Kliam wants better product. Proper alchemists, not the gutter chemists he leans on. And there's a whole green full of exactly that kind of talent sitting out in the open today, with half the city watching and thinking it's just a fair.
+Enriko: When?
+Dockhand: Today. Now, probably. That's all I've got.
+Enriko was out the door and running before the man finished the sentence. The lower district to the western gate was the better part of an hour on foot. He had no horse, no shir fast enough to close that gap, nothing but his own legs.
+He ran anyway. He didn't know what else to do with his hands.
+set {enriko_ran} = 1
+[signal arg="interlude:off"]
+label ambush
+[signal arg="bg:exhibition_green_chaos"]
+It started with the tents. The striped canopy nearest the western gate simply came apart. Not knocked down, not burned. Unmade, shredded into ribbons by something that moved faster than the eye could track.
+Then there were more of them, dark-clad, moving in a coordinated wedge. The green's hired guards went down in the first ten seconds. Three knights on the western perimeter fell before any of them finished drawing steel.
+Lan (Sus): (This isn't in the game. I don't have a page for this.)
+Lan (Mad): Everyone down! Get to cover!
+He hauled Florentine behind the heavy stone base of a fountain at the green's center. Liesel was already there ahead of him.
+Lan (Talk): Stay down. Both of you. Whatever happens.
+Liesel (Flat): Lan...
+Lan (Mad): Stay down.
+Veldero was already at his shoulder with a plain steel blade, and something in his stance had changed completely from the boy who'd once called a montante a tent pole. Feet set, weight low, a controlled thread of gi visibly humming along the edge of his sword.
+Lan (Sus): Since when could you do that?
+Veldero: Since I decided I didn't want to keep being the one everyone worries about.
+label vanguard
+[signal arg="combat:fountain_wave"]
+Lan (Combat): (Two boys, one line. They're not trying to kill us. They're trying to get past us.)
+Veldero: Does that help?
+Lan (Default): Not even a little.
+Veldero: Then let's make getting past us more expensive.
+Veldero's free hand closed around the flat of his blade, and a thread of orange light wound down the steel from his palm. Clumsy compared to a proper fire shir instructor, but real. The edge of his sword caught light the way a poker catches heat from a forge.
+Lan (Sus): You can cast shir?
+Veldero: Not the time.
+- Ask since when
+	Lan (Talk): This feels like the kind of thing you mention before the emergency.
+	Veldero: Duly noted for next time. Assuming there's a next time where I'm not currently fighting for both our lives.
+- Say nothing
+	Lan (Combat): (Later. If there is a later.)
+They held the fountain for what felt like an hour and was probably four minutes. Then the pressure eased all at once.
+A man stepped through his own men's ranks without any of them moving to make way. They simply parted, the way water parts around something it already respects. Tall, lean, wolf-eared, in dark leather with a hooksword in each hand, moving with an almost bored elegance.
+Kliam: You two have been remarkably inconvenient. My men don't usually struggle with children. Let's see what's actually underneath that inconvenience.
+Lan (Smug): You could just leave. Save everyone the trouble.
+Kliam: I like you. I'm still going to break you in half. But I like you.
+label kliam
+[signal arg="combat:kliam_unwinnable"]
+He wasn't fighting seriously. Lan understood that within three exchanges, and it did nothing to make the next several minutes survivable. Kliam moved like water finding the one path through a maze that mattered. Every guard Lan raised got turned aside like paper.
+A hooksword's curved edge opened a line of fire down Lan's ribs. Veldero took a backhand that sent him skidding across the flagstones, sword lost, blood running from a cut above his eye.
+Kliam: You're better than my men. You're nowhere near good enough. There's a difference between those two facts that nobody's ever bothered explaining to you.
+Lan got back to his feet. His whole side screamed. He raised the longsword anyway, because the alternative was letting Kliam walk past him toward the fountain.
+Kliam: Enough. Fang.
+label backstab
+Lan never saw it coming, because there had been nothing to see.
+One second there was empty air behind him. The next, a blade had gone in under his shoulder blade, clean and silent, driven by someone who'd been standing close enough to touch him for however long the fight had lasted, waiting for exactly one word.
+Veldero's head snapped around a half-second too late, his sword swinging at the space where the attacker should have been and finding empty air.
+Lan didn't feel pain at first. He felt cold, and then the ground, and somewhere very far away Liesel screaming his name in a voice that didn't sound like hers.
+Liesel (Flat): Stay awake. Stay awake, do you hear me. Don't you dare.
+Her gi poured into the wound in a desperate, undisciplined flood that spent three times what the situation called for.
+- Tell Liesel it's okay
+	set {aff_liesel} += 2
+	Lan (Acting): Hey. I'm... fine. You're doing it too hard. Slow down. You're the best healer I know.
+	Liesel (Flat): Don't talk. Shut up. Don't you dare.
+- Reach for Veldero
+	set {aff_veldero} += 2
+	Lan (Acting): Veldero. Get them out. Florentine. Liesel.
+	Veldero: I'm not leaving you.
+Kliam: Shame. He had promise.
+label richard
+They came in from the western road at a dead run, two figures cutting through the fleeing crowd like it was standing still. Gold hair, a single-handed arming sword already drawn. Beside him, faster than anything Lan's fading vision could track, a second figure covered thirty yards in what looked like a single stride.
+Richard: Assigned knight, fourth year. Richard Leonhard. Stand down.
+The assassin who'd stabbed Lan was already moving, the same silent approach, the same patient timing, angled for the exact gap in a fourth-year's guard that had worked once already today.
+It didn't work a second time. A bare foot caught the assassin's wrist an inch from Richard's spine. A cat beastfolk girl with dark hair and slit-pupiled amber eyes pivoted through a kick that stopped the strike as if it had hit stone.
+Ingrid: Aw, look at that. Richie almost got skewered on his very first big public rescue. Would've been embarrassing. I'd never have let him live it down.
+Richard: Ingrid. This is not the moment.
+Ingrid: It's exactly the moment. This is when the moment happens.
+Kliam: Ingrid. And Leonhard. The academy sends its favorites.
+Richard: The academy sends whoever's closest. You've made a great deal of noise today. I'd like to discuss that. I'm sorry we weren't here sooner.
+label clash
+What followed didn't look like the fight Lan and Veldero had survived. More like weather. Richard's arming sword met Kliam's paired hookswords in an exchange too fast to separate into strikes, each block a concussive crack that sent flagstones skittering. Richard fought clean, patient, without wasted motion, like a man doing a job he took seriously rather than a legend enjoying an audience.
+Beside them, Ingrid met the assassin with nothing but her own two legs. Her shir slowed the world down around her to a tenth of its speed, and she spent every stolen fraction the way a cat spends an extra second over whatever it's decided to catch.
+The assassin, Aftgan, vanished with his cloaking shir, silent and total. Ingrid's knee met his sternum a half-second after he reappeared.
+Ingrid: Nope. Try again. You keep re-appearing in the same three spots because you think nobody's counting. I've been counting since your second vanish.
+Richard: Less commentary, more finishing.
+Ingrid: I can multitask, Richard. It's one of my many gifts.
+Kliam: Aftgan. We're done here.
+Aftgan simply wasn't where he'd been standing a half-second later, gone the way smoke goes. Ingrid's bare foot closed on empty air.
+Ingrid: Oh, come on. I almost had that one.
+Richard closed the last distance in one motion, inside the reach of both hooksword blades, and put Kliam flat on his back with cold steel against the wolf beastfolk's throat before he'd registered that his retreat was cut off.
+Richard: You're not as fast as your reputation. Or I'm faster than mine.
+Ingrid: Called it. Richie's faster than everyone's reputation. Ruins my whole unassuming shadow agent thing when he keeps stealing the ending.
+[signal arg="kliam_captured"]
+set {kliam_captured} = 1
+label run
+Liesel (Flat): I can slow it. I can't fix this. He needs a real healer, a real medical room, now.
+Ingrid: Then he's got it. Hold on to whatever's left of him. I'll have him there before you'd have finished saying goodbye.
+The world blurred. Lan's last clear memory of the exhibition green was the sky tilting sideways, and then only speed. Impossible, tearing speed, the academy's outer wall arriving in what felt like a single heartbeat, Ingrid's voice above him shouting a name. Doc. DOC.
+He caught fragments after that. A voice, calm in the practiced way of someone who had done this before. Pressure, and then a different, stranger pressure. Gi flooding into him with none of Liesel's desperate flood. Controlled, precise, exactly as much as the wound needed and not a drop more.
+Doc: Stay with me. You're not done yet, boy. Not even close.
+The last thing Lan heard, before the dark closed all the way over him, was his own heartbeat, slow and ragged and, against every reasonable expectation, still going.
+[signal arg="chapter_end:ch13"]
+[end_timeline]

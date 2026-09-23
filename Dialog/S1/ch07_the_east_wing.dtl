@@ -1,0 +1,79 @@
+label bait
+[signal arg="bg:cafeteria_morning"]
+Enriko: They've been asking around about Veldero. Which class he's in, which corridors he walks alone.
+Enriko: Subtle as a brick, both of them, but Veldero hasn't noticed yet.
+Lan (Talk): Why Veldero and not me?
+Enriko: Because you're the one who scared them, and cowards don't go back for seconds against the thing that scared them.
+Enriko: They go for the softest target next to it.
+Enriko: They'll corner him somewhere quiet, rough him up, and let word get back to you. Bait.
+Lan (Default): That's a stupid plan.
+Enriko: A stupid plan executed by stupid people, which is worse, because they won't know to stop when it's already gone wrong.
+Enriko: Keep an eye on him. I'll keep my ear out.
+set {aff_enriko} += 1
+Three days later, the ear paid off.
+label confrontation
+[signal arg="bg:east_cloister"]
+The message came from a first-year Lan barely recognized, breathless from running. East cloister, now, they've got your friend.
+Han: There he is. Wondered how long it'd take. We're just having a conversation. Your friend was explaining how sorry he is for the mint incident.
+Veldero: I wasn't.
+Veldero got a shove into the wall for it that made Lan's vision go narrow.
+- Joint lock and a warning
+	Lan (Combat): (No sword. Amir's rule lives in the hall, but I've got my own rule, and it doesn't involve giving these two a montante story.)
+- Keep it quick and quiet
+	Lan (Smug): (Two boys. Four seconds. Make it look like luck.)
+He closed the distance before Jack finished turning, caught the wrist already cocking back,
+and put Jack on the ground with a joint lock from six years of settling arguments with men larger than either of them.
+Han lunged anyway. Lan sidestepped and put his momentum into the wall.
+The whole thing took four seconds, and looked like Lan had gotten lucky twice in a row.
+Lan (Default): That's the last time either of you touches him. Not because I'll tell someone. Because next time I show up, I won't be this restrained about it.
+label bandage
+Leonora heard about it before dinner, the way she seemed to hear about everything eventually.
+Leonora (Default): You're bleeding. Sit down.
+Lan (Talk): It's nothing.
+Leonora (Default): I didn't ask if it was something. I have a healing kit.
+Lan (Smug): You carry a healing kit.
+Leonora (Smile): I carry several things people don't expect a princess to carry. It's proven useful more than once.
+Leonora (Default): You keep putting yourself in the way of things that aren't yours to carry,
+Leonora (Default): for reasons you won't explain, at a cost you don't weigh the way anyone sensible would.
+Leonora (Default): It's a puzzle, and I don't like unsolved puzzles standing this close to me.
+Lan (Smug): So this is a professional interest.
+Leonora (Default): Call it what you like. I intend to keep watching you closely until I understand why.
+Leonora (Default): Consider that a warning, not a courtesy. And don't bleed on my bandages again. They're not free.
+set {aff_leonora} += 1
+label eastwing
+[signal arg="bg:east_wing_night"]
+The abandoned east wing had been Lan's since his second week.
+Three empty classrooms, a hallway with a hole in the roof that let moonlight through in a long silver stripe,
+and no one who ever looked for a student there after curfew.
+Liesel (Default): That footwork. You keep dropping your back foot at an angle. Is that deliberate?
+Lan (Talk): It's called Nachreisen. Following after.
+Lan (Talk): You let the opponent's momentum carry them past you, and the angle sets you up to close the gap the instant they're off balance.
+Liesel (Smile): You explain this like a teacher.
+Lan (Smile): I had good ones. Long ago.
+Dialog/Ilia (Goof): Okay. I was expecting a ghost, or a very large rat, and instead I find this. This is so much more interesting.
+Lan (Acting): This isn't what it looks like.
+Dialog/Ilia (Goof): It looks like a rank {rank} doing footwork I've seen maybe three people at this academy manage cleanly,
+Dialog/Ilia (Goof): with a sword I've never seen, in a hallway that officially doesn't exist on the building map.
+Lan (Sus): (Iliako Fengari. Ninth overall in the whole academy.)
+Lan (Sus): (First in her year, and second-years are measured only against second-years.)
+Lan (Sus): (Two separate systems, and both of them say this is not a fair fight.)
+Lan (Talk): Ilia. I need you not to mention this to anyone.
+Dialog/Ilia (Happy): Obviously. I'm not going to tell the faculty you've been sandbagging. Where's the fun in that?
+Dialog/Ilia (Happy): But I want something for my silence. I refuse to be boring.
+Lan (Default): What do you want?
+Dialog/Ilia (Happy): A sparring partner. A real one. Full effort.
+Dialog/Ilia (Happy): I train alone because there's no one at my level willing to go all out with me.
+Dialog/Ilia (Happy): Everyone's too worried about hurting the princess of Nordvinter's favorite export, or getting hurt themselves.
+Dialog/Ilia (Happy): Twice a week, here, and I keep your secret as long as you keep showing up.
+Dialog/Ilia (Def): One condition. Blade only. No gi, no shir. If I brought everything I've got it wouldn't be sparring, it'd be a funeral.
+- Deal
+	set {aff_ilia} += 1
+	Lan (Smile): Deal.
+- Deal, and you owe me tea
+	set {aff_ilia} += 2
+	Lan (Smug): Deal. And every session ends with tea, on you.
+	Dialog/Ilia (Happy): Oh, I like you. Deal.
+set {ilia_deal} = 1
+Dialog/Ilia (Happy): Wonderful! Now that that's settled, since I'm already here and you're already holding that ridiculous sword, how about we start tonight?
+[signal arg="chapter_end:ch07"]
+[end_timeline]

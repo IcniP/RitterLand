@@ -1,0 +1,142 @@
+label announcement
+[signal arg="bg:training_hall"]
+Amir: Joint class, Thursday. Monster Hunting.
+Amir: Private forest, low and mid-tier game only, and yes, before anyone asks, that still means something can kill you if you're careless.
+Amir: Parties of up to three. Any department.
+Amir: You'll be graded as a group, which means the group you pick matters more than anything you'll do in there.
+Amir: You have until Wednesday to sort yourselves. After that, I sort you, and you will not enjoy my version.
+Lan (Sus): (Monster Hunting. Private forest. First joint class of the year.)
+Lan (Sus): (This is the flag where the story sends killers after both royal heirs at once, dressed up so each country looks like it struck the other first.)
+Lan (Sus): (In every playthrough, the protagonist was standing in that forest, because I steered him there myself.)
+Lan (Sus): (This time there's nobody standing there but me.)
+Lan (Sus): (Then I need people with me who won't fall apart when it happens.)
+[signal arg="freetime:ch04"]
+label veldero_offer
+Lan (Talk): Party up with me. You, me, and whoever else we can talk into it.
+Veldero: I would, honestly, but I already told someone I'd be with them. I made the promise before you even asked.
+- Ask who he promised
+	Lan (Talk): Who did you promise?
+	Veldero: You'll see Thursday. Sorry. Bad timing.
+- Let it go
+	Lan (Default): No, it's fine. Good luck with whoever it is.
+	Veldero: Thanks. Really.
+Enriko: Party up? Obviously. Who's our third?
+Lan (Default): Working on it.
+Enriko: Excellent. I trust you completely and have no further questions. So anyway, the shoe[pause=0.35][lspeed=0.25!]...[lspeed]
+set {aff_enriko} += 1
+label liesel
+[signal arg="bg:library_corner"]
+He found her in the far corner of the library, the one nobody used because the lamp there had a permanent flicker.
+Dark gray hair, dark blue eyes with a flat, assessing sharpness,
+a cold set to her mouth that made her look one bad mood away from performing an autopsy on whoever annoyed her.
+Liesel (Flat): You're staring.
+Lan (Talk): I am.
+He sat down across from her without being invited.
+Liesel (Flat): Can I help you.
+Lan (Default): I need a healer for the monster hunting class.
+Liesel (Flat): You and every other first-year in the Physical Department. I've had four requests already this week. I turned down all four.
+Lan (Talk): Why?
+Liesel (Flat): Because they wanted a shield with a heartbeat. Someone to point at when the monster's about to bite them.
+Liesel (Flat): Nobody asked what I actually want out of it. So, which one are you.
+label pitch
+- "Neither, I hope."
+	Lan (Talk): Neither, I hope.
+- "Does it matter? You've already decided."
+	Lan (Smug): Does it matter which? You've already decided I'm one of them.
+	Liesel (Flat): Then change my mind.
+	Lan (Talk): Neither, I hope.
+set {aff_liesel} += 2
+Lan (Talk): I watched your gi output in the practical drills. Smoothest control in the first year, noble or not.
+Lan (Talk): You don't waste a drop showing off, which means you'll still have plenty when everyone else has burned through theirs and started panicking.
+Lan (Default): I don't need someone to protect. I need someone I don't have to worry about.
+Liesel (Flat): That's a nice speech. Anyone can make a nice speech.
+Lan (Default): I'm aware.
+Liesel (Flat): So prove it. In the forest, when it matters, not in a library where it costs you nothing to sound sincere.
+Liesel (Default): You're the first one who asked instead of assumed. That's worth something. Not a yes. Something.
+label ginger
+He came back two days later, not to ask again,
+but because the flickering lamp corner had started to feel less like her territory and more like a place he was simply allowed to be.
+Lan (Smile): Peace offering. Dried ginger candy. Settles the stomach after a long cast.
+Liesel (Smile): You're trying to be charming.
+Lan (Smug): I'm trying to be tolerable. Charming felt like overreaching.
+Lan (Default): That the anatomy text you use for the healing diagrams? Less wasted gi if you know exactly what you're fixing instead of flooding the area and hoping.
+Liesel (Default): That's the theory, yes. Most people your rank don't know that's the theory.
+Lan (Talk): I pay attention.
+She didn't send him away. When he pulled a book off the shelf and read across from her in comfortable silence, she didn't object to that either.
+set {aff_liesel} += 1
+label thursday
+[signal arg="bg:private_forest_edge"]
+Thursday morning the first-years gathered at the edge of the private forest in their sorted groups.
+Veldero stood between Florentine, arms crossed, and Luna, who stood a full pace apart with the posture of someone placed there against her will.
+Enriko: Huh. That's a combination.
+Veldero: Told you you'd see. Florentine needed a party and I'd already said I'd back her up.
+Veldero: Then Luna got assigned in because the sheet ran out of room everywhere else.
+Luna (Serious): I did not get assigned. I was placed. There's a difference. I'm noting it for the record.
+Veldero: Duly noted.
+Florentine (Flirt): Try not to die first, so we can properly enjoy it when you do.
+Amir walked twenty-eight parties to the tree line himself.
+Amir: Stay with your party. Track, don't chase.
+Amir: If something is too big for the three of you, that is information, not an insult. You retreat and you send up a flare.
+Amir: I would rather fail all of you than bury one of you.
+Enriko: What is that, actually? I've asked around. Nobody's seen a blade shaped like it.
+Lan (Default): A montante. Two-handed. Long reach, built for keeping several people at a distance instead of trading blows with one.
+Liesel (Flat): That isn't one of the seven styles. Amir didn't mention it.
+Lan (Smug): It isn't. I had it made by a traveling smith. My hands took to it better than anything I was actually taught.
+Lan (Smug): Nobody around uses one, which suits me fine.
+Enriko: Convenient, that the one weapon nobody recognizes is extremely good for a trip where we might meet something big.
+Lan (Smug): I like to think I got lucky.
+label rockfangs
+Enriko: Broken branch at chest height. Something big enough to shoulder through instead of going around. Claw drag, not paw.
+Enriko: Rock Fang pack. Slow, stupid, mean when cornered. Perfect for beginners.
+Liesel (Flat): You say that like you've done it before.
+Enriko: I have not. I've read a great many books by people who have.
+[signal arg="combat:rockfangs"]
+Lan (Combat): (Longsword up. Take the lead one clean.)
+Liesel (Default): Left flank, low.
+Lan shifted without asking why, and felt claws rake past where his leg had been.
+Lan (Smile): Nice call.
+Liesel (Smug): I have eyes. And considerably more sense than either of you. You both walked into a pack formation like it was a straight line.
+Enriko: In our defense, we're very stupid and very charming.
+Liesel (Smile): One of those is true.
+set {aff_liesel} += 1
+Lan (Smile): (This is good. This is the part I actually get to keep.)
+That was when the noise came in from the east. Not the clatter of Rock Fangs. The flat, human ring of steel on steel, and a scream.
+Lan (Combat): That's not a monster fight.
+label clearing
+[signal arg="bg:forest_clearing"]
+Lan (Talk): Liesel, stay with Enriko, hold this line.
+Enriko: Already flaring it.
+Leonora's party was down to her alone.
+Both partners were on the ground and being dragged away, and six dark-clad attackers were closing a ring around her.
+She fought with a single-edged arming sword, short economical cuts, and the ring kept shrinking.
+Lan (Sus): (Three weeks of Amir's circulation drills. It still leaks at the edges, but for the first time there's a real current under the blade.)
+The montante came off his back. Wide, continuous arcs forced the ring to open or lose limbs deciding not to.
+The first attacker went down before he got close enough to touch Leonora.
+Lan (Combat): (Pick the nearest. Corner him against the treeline. Then the next.)
+[signal arg="combat:clearing_montante"]
+It had been three weeks of careful, forgettable mediocrity. Something in him finally let out a breath.
+His mouth curved into something that wasn't quite a smile.
+Lan (Smug): (Just swing the sword until neither can.)
+Leonora stood very still at his shoulder, blade still up, watching him cut through what was left of the ring.
+The last of them broke and ran for the tree line. Lan let him go.
+Chasing a runner alone into unfamiliar woods was exactly the overconfidence that got people killed in a story like this one.
+Silence came down in pieces.
+First the birds, then his own breathing, then the ordinary distant sound of other parties, entirely unaware anything had happened.
+Leonora (Default): {rank}. You want to explain that?
+Lan (Acting): Not really, no.
+Lan (Sus): (Six men who came armed and organized to murder someone. Every rule I learned in either life says that puts them outside whatever mercy I have left.)
+Lan (Sus): (I know who's behind it. Her brother.)
+Lan (Sus): (Ambition dressed as restoring old glory, and a taste for solutions with no fingerprints.)
+Lan (Sus): (If I say his name now with nothing but a rank {rank}'s word, I get killed quietly and the truth gets buried deeper.)
+Lan (Sus): (So I say nothing. I file it beside the empty seat that used to be a hero.)
+label word
+Enriko: You hear about Al-Tale'a's side? Different part of the forest. Raiz's party got hit too.
+Lan (Talk): Is he[pause=0.35][lspeed=0.25!]...[lspeed]
+Enriko: Fine. More than fine. Word is he took a spear through the shoulder and a blade across the ribs and just kept walking.
+Enriko: Let the wounds close mid-fight and used the time everyone else spent flinching.
+Liesel (Flat): That's not normal regeneration. That's a body that doesn't register being outmatched as a reason to stop.
+Enriko: Terrifying. Glad he's on nobody's enemy list. Well, nobody's official enemy list.
+Lan (Sus): (Two royals. Two forests, opposite sides of the same class, the same day. Somebody wanted this to look like war.)
+Lan (Sus): (And somebody's going to get blamed who didn't do it.)
+[signal arg="chapter_end:ch04"]
+[end_timeline]

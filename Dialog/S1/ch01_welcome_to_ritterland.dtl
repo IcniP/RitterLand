@@ -1,0 +1,102 @@
+label household
+[signal arg="bg:schwert_mountain"]
+Six-year-old Lan Schwert sat cross-legged on the woodpile in the gray mountain light, watching his father split logs, and waited for his moment.
+Lan (Talk): Papa.
+Narr: Mm.
+Lan (Talk): Old Hess down the valley said his chest hurts when he gets angry. He said it's his gi. It goes up to here.
+Lan (Talk): But I thought gi went down first. In your stomach.
+The axe stopped mid-swing.
+Narr: Where'd you hear that?
+Lan (Acting): Hess[pause=0.35][lspeed=0.25!]...[lspeed]
+Narr: There's no Hess. Fourth one this month, kid. The porridge one was good. The one where you pretended to fall off the fence was excellent.
+Narr: Figure it out yourself.
+Lan (Sus): (It isn't that my family is stupid. Mama knows every plant on the mountain.)
+Lan (Sus): (Auntie put a hand on the kitchen table once and the whole house went thickly quiet.)
+Lan (Sus): (Grandpa sits on the porch all day and birds never land in the yard.)
+Lan (Sus): (They teach me everything. The moment anything gets close to gi, or shir, or the sword, a door shuts behind their eyes. Cheerfully. Which is worse.)
+Lan (Sus): (I know this game. Two thousand four hundred and fifty hours. I do not know the name Schwert. Not a quest, not a credit, not one line.)
+Lan (Default): (So it's background. A random mountain family in a corner the camera never pointed at.)
+label trader
+One autumn a trader came up the mountain road, saw Narr chopping wood, and went pale as old paper.
+He turned his cart around on a track barely wide enough for it and went straight back down.
+Lan (Talk): Papa, who was that man?
+Narr: Him? Ah. He'd have known me back when people still called me the Fool.
+Lan (Talk): The Fool?
+Narr: Mm. Eat your carrots.
+Across the table, his mother didn't look up from her bowl, and she didn't smile. She smiled at everything.
+label exile
+On his tenth birthday, without ceremony, the Law of Exile arrived.
+Out of the valley, and no coming back until you'd made a name the whole continent could hear.
+His mother packed four days of food. His father handed him a wooden sword, heavy and plain.
+Lan (Talk): This is a stick.
+Narr: It's a good stick.
+Narr: Go on then. Make a name for yourself. A big one. And don't come back until you've found a beautiful wife, you hear me?
+Lan walked down the mountain road with his eyes stinging and no idea why.
+From the first bend, his grandfather was still on the porch, and he was fairly sure the old man was crying.
+label forest
+[signal arg="bg:border_forest"]
+Six years taught him what the mountain never did. The wooden sword lasted nine months.
+He replaced it with a steel one taken off a bandit who no longer needed it.
+Lan (Sus): (My gi gathers. It will not stay.)
+Lan (Sus): (I'm leaking more than half of everything I have, and there's no guide for it, because in the game you just pressed a button.)
+His swordsmanship had become something that made grown mercenaries go quiet.
+Around fourteen he spent nearly everything he owned on a montante,
+a huge two-handed sword with a double ring guard, because old Iberian styles were what his hands remembered best.
+Lan (Sus): (One teacher. That's all I need. And the only door to that is Tausend Sterne Academy.)
+Lan (Sus): (No papers, a country accent, and eleven silver coins.)
+Four days later, in the middle of an ordinary escort job, the forest went wrong.
+A guard screamed. Hold the line! The front's broken, the front's[pause=0.35][lspeed=0.25!]...[lspeed]
+A Horror Boar came through the barricade the way a storm comes through a window. The escort was gone in under a minute.
+Lan came out of it alone, on his feet, the montante bare in his hands.
+Lan (Combat): (Fine.)
+[signal arg="combat:boar"]
+label after_boar
+Then his grip failed. His fingers opened on their own, and for one half-second he was back in an apartment, listening to a sword ring off the floor.
+Lan (Mad): (Not this again.)
+Berthram had been watching for three minutes and forty seconds. He had walked up the ridge planning to eat his lunch. He did not go down right away.
+Berthram: Ah. Are you all right, young man?
+An old man walked out of the tree line holding a map upside down.
+Silver beard, a scar across the left eye, an apple in his hand. He raised his free hand.
+There was no chant. A column of pure sun-colored energy simply appeared. Then there was only ash, a smoking hole, and the smell of struck metal.
+Lan (Sus): (That's Berthram. The Empire Sun. In the game you had to survive to year four to see this man fight.)
+Berthram: Hm. You're throwing away more than half your output. It's going straight out through your wrist, like a leak.
+Berthram: Nobody's ever taught you to seal that, have they.
+Lan (Mad): No one's ever taught me anything.
+Berthram: Four minutes.
+Lan (Talk): What?
+Berthram: Nothing. Your name, boy.
+Lan (Default): Lan. Lan Schwert.
+And the old man's face went out like a snuffed candle. The smile didn't fall. It froze, every line in place, while something behind it left the room.
+Lan (Sus): (He knows that name. Nobody knows that name. I don't even know that name.)
+Berthram: Schwert, you say. Well, well. A rough diamond, rusting in the mud. How would you like to sit the entrance trials at Tausend Sterne?
+Lan (Sus): (Would you like to unlock and reach the TRUE ENDING?)
+Lan (Default): I accept.
+Berthram: Good lad. Trials are next spring, I'll send the letter. One condition.
+Berthram: In your first month you'll come to my office and answer some questions about your family. Honestly. All of them.
+Berthram: And if it turns out you can't answer them, then you and I are going to have a very long talk.
+label trials
+[signal arg="bg:trials_hall"]
+He spent a year preparing.
+Eighty-four spots, and every applicant ranked one through eighty-four, the number stuck to your name for the whole first year.
+Lan (Sus): (Don't get noticed. Don't get recruited. Don't get watched.)
+Lan (Sus): (He enrolls this year, in this department. Same classes, same ground.)
+Lan (Sus): (Close enough to steer him away from anything that would kill him, far enough back to leave no mark.)
+The practical test. A plain steel practice sword. The montante stayed wrapped.
+- Keep it dull
+	Lan (Sus): (Dull. Forgettable. A farm boy with textbook footwork.)
+- Look bored
+	Lan (Smug): (If I'm going to be forgettable, I might as well commit to the bit.)
+set {rank} = 67
+A clean, unhurried show of basic technique. Solid footwork, nothing that would make anyone lean forward in their seat.
+He let two exchanges go that he could have won.
+When they handed him the form to choose his department, he didn't hesitate. PHYSICAL DEPARTMENT.
+label letter
+The letter came three weeks later on heavy cream paper with the academy's seal in blue wax.
+SCHWERT, LAN. Physical Department. First Year. Entrance Rank {rank} of 84.
+He read it twice, and that's when he noticed the second page. A registration slip.
+In the box marked FAMILY / HOUSE, a clerk had written Schwert.
+Next to it, in a different pen, a small red mark and three words.
+Verify with Headmaster.
+Lan (Sus): (Two thousand four hundred and fifty hours, and the very first thing this world hands me is a file I've never read.)
+[signal arg="chapter_end:ch01"]
+[end_timeline]

@@ -1,0 +1,106 @@
+label gate
+[signal arg="bg:academy_gate"]
+The academy sat on the open plain outside the capital like something that had fallen out of the sky.
+Domed faculty halls in the morning fog, the Colosseum crouched behind them, four dorm buildings in neat rows.
+Lan (Sus): (A hundred and seventeen years since the war ended. First year, first day. The clock starts now.)
+Enriko: Okay, okay, okay, hold on. That is a sword.
+Lan (Talk): It's a tent pole.
+Enriko: It's a sword, and it's enormous, and you're carrying it like you're off to go fishing. Enriko.
+Enriko: Support Department, Nusantara, first year, extremely rich, terrible at fighting. You're Physical, obviously.
+Enriko: Look at your shoulders. What's your rank?
+Lan (Default): {rank}.
+Enriko: Perfect. I'm seventy-one. We're both garbage. We're going to get along great.
+Enriko: Lesson one, free of charge. Don't stand in front of the notice board by the east arch.
+Enriko: That's where people go to have feelings about the rank list. Read it at night, like a normal coward.
+Enriko: Lesson two. The girl in the third-year courtyard with the black gloves? Don't talk to her.
+Enriko: She once ignored a lord's son so completely that he transferred schools.
+Lan (Talk): How many lessons are there?
+Enriko: Forty. I've been here three hours.
+Lan (Smile): (I laughed. A real one, the first in a while.)
+Lan (Sus): (Careful. This is exactly how a story pulls you in.)
+Lan (Sus): (Someone likable at the gate on day one, and you forget you're on a deadline. He isn't in my memory of the game.)
+Lan (Sus): (Background. Harmless.)
+set {aff_enriko} += 1
+Enriko: Veldero! Over here! Come meet my new sword friend!
+Veldero: Sorry. Are you two[pause=0.35][lspeed=0.25!]...[lspeed]?
+Enriko: Best friends. It's been four minutes. Lan, Veldero. Veldero, Lan. He's Physical, he's got a tent pole, he's {rank}.
+Veldero: Seventy-four. I almost didn't get in at all.
+Lan (Sus): (I read the gi off his hand. Flat, low, ordinary. Commoner. Nothing in my memory about him.)
+set {aff_veldero} += 1
+Enriko: You're not going to ask about the sword? Everyone asks about the sword.
+Veldero: I don't know enough about swords to have an opinion. It could be the best sword in the world or it could just be a tent pole.
+Lan (Smile): See, he gets it.
+Enriko: I refuse to accept this.
+Veldero: It's clearly a very well-made tent pole.
+label ceremony
+[signal arg="bg:great_hall"]
+Lan (Sus): (Eighty-four first-years. He's one of them.)
+Lan (Sus): (He's always in the front section in this scene, I've seen it two thousand four hundred and fifty times. I know his face.)
+The Britannic Arcana banner hung over the left aisle.
+Under it sat a girl with red hair and gold-orange eyes, holding herself so still the students around her looked fidgety.
+Crown Princess Leonora von Rosendael.
+Near the front, in Al-Tale'an gray, a young man with white hair and a coiled kind of stillness. Raiz Al Khalid.
+Against the far wall, a fourth-year with gold hair and blue eyes wearing a sword from a hundred loading screens. Richard Leonhard.
+Lan (Sus): (All exactly right. So where's[pause=0.35][lspeed=0.25!]...[lspeed])
+He went face by face through the front section, row by row. Not an empty seat. Every seat full. No gap a stranger would ever notice.
+Lan (Mad): (The room looks correct. The room is lying.)
+Lan (Sus): (Late. Sick. Deferred a term. There's a version where he walks in Thursday and everything is fine.)
+Lan (Sus): (I don't believe it.)
+Berthram: I'm required to give you the speech.
+Berthram: It says you're the finest young talents on the continent,
+Berthram: that this academy has stood a hundred and seventeen years, and that great things are expected of you.
+Berthram: All true. Also useless. So here's the real one.
+Berthram: There are eighty-four of you.
+Berthram: There's a number next to every one of your names, and about a third of you will decide it means something about who you are as a person.
+Berthram: It doesn't. It means you had one good morning, or one bad one, in front of three tired examiners.
+Berthram: I've buried a lot of students who came in ranked high.
+Berthram: I've buried fewer who came in ranked low, and that's because they were careful, and they knew they had to be.
+Berthram: Out there, the thing trying to kill you doesn't check your rank first. It cares how much of your energy you waste.
+Berthram: It cares whether your feet are in the right place. It cares whether the person next to you is still standing.
+Berthram: Come see me if you're in trouble. Come see me before you're in trouble, which none of you will do. Classes start Monday. Welcome to Tausend Sterne.
+Richard: I'm told I'm supposed to give a speech too. Unlike the Headmaster's, I actually wrote mine down.
+Richard: I sat where you're sitting four years ago. I was rank eleven, which felt like the end of the world, and I have never looked at that number again.
+Richard: Nobody in this hall got here by accident.
+Richard: Whatever door you walked through, money, talent, blood, or nothing but stubbornness, something in you refused to quit.
+Richard: Hold on to that. Measure yourself against who you were yesterday. That's the only fight you can win.
+Richard: Good luck. Try not to set the dormitories on fire in the first week. That one's a personal request.
+Lan (Smug): (Chosen one. Yeah. That checks out.)
+label board
+[signal arg="bg:rank_board_night"]
+The list went up at four.
+Lan waited until nine, the way Enriko had told him to,
+and walked to the east arch once the lanterns were lit and the courtyard had gone quiet except for a cat on the wall.
+Eighty-four names, black ink on white board behind glass. He found his own first. {rank}. SCHWERT, L. Physical.
+Then he went looking for the one that mattered. One, Raiz Al Khalid. Two, a minor rival from later in the story.
+Three, Leonora von Rosendael. Four, a name that meant nothing to him. Five.
+Lan (Mad): (It isn't him.)
+Someone else stood in the one spot that had belonged to exactly one person for two thousand four hundred and fifty hours.
+He kept going. Six was the minor rival, one place lower than he remembered. Seven, one slot down.
+Every name from six onward had slid down the board by exactly one place, patient and orderly, like water finding a new level.
+Lan (Sus): (Not a bump. A shift.)
+Lan (Sus): (Exactly one person is missing, and the whole list rearranged itself around the hole so cleanly nobody would notice unless they'd memorized the roster.)
+At the bottom, eighty-four was a name he did not recognize.
+Not a rival, not a background face, not a line of flavor text in two thousand four hundred and fifty hours.
+Someone pulled in from outside to keep the total tidy.
+Lan (Sus): (One name erased. Everyone shifts up to hide it. One new name pulled in to keep the count even.)
+Lan (Mad): (He's dead. Not late. Dead, before the semester even started, and whoever did it made the story close back over the hole like water.)
+- Lay a hand on the glass
+	Lan (Sus): (Come on. Be here.)
+- Read the names again
+	Lan (Sus): (Once more. Slower. There has to be a mistake.)
+He put his hand flat over all eighty-four names, as if pressure alone could force the true one back into existence.
+Lan (Sus): (Then I'm not the support character anymore.)
+Lan (Sus): (Everything I built over seventeen years rested on one assumption, that someone else would carry the story and I'd only keep him alive.)
+Lan (Sus): (An anchor only means something if there's a ship attached.)
+Lan (Sus): (If he's really not here, the story isn't a fixed track anymore. Everything I know stops being knowledge and starts being a guess.)
+He walked back to a small, clean dorm room with two beds. The other was claimed by someone who snored.
+He laid the gray-wrapped bundle across his knees and did not unwrap it.
+Lan (Sus): (One. The main character of this world isn't in this building, and I have no idea why. Two.)
+Lan (Sus): (In under a month I sit in the Headmaster's office and answer honest questions about a family I know nothing about.)
+Lan (Sus): (Three. I'm ranked {rank} of 84, still leaking more than half my gi, and the Evil God's awakening starts this year.)
+Lan (Smile): Okay.
+Lan (Smile): (And some small part of me, asleep under four years in a dark apartment and six in a cold forest,)
+Lan (Smile): (stretched and woke up a little, and found that it was, very faintly, interested.)
+Lan (Smug): (So it's my story after all.)
+[signal arg="chapter_end:ch02"]
+[end_timeline]

@@ -1,0 +1,58 @@
+label confrontation
+[signal arg="bg:east_wall_path"]
+Leonora (Default): Walk with me.
+She led him away from the main courtyard along the quiet east wall, and didn't speak again until they were well clear of anyone who might overhear.
+Leonora (Confused): I've had two days to decide how angry I am about this, and I still haven't managed it, which is not an experience I enjoy.
+Lan (Default): I could apologize, if it would help.
+Leonora (Default): It wouldn't. You don't know what you'd be apologizing for yet.
+Leonora (Mad): Three weeks ago I broke your guard in under ten seconds and told you not to waste my morning.
+Leonora (Mad): Two days ago I watched you cut through six trained killers like it was the easiest thing you'd done all year.
+Leonora (Mad): Those two facts do not belong to the same person, Schwert. I want to know which one was the lie.
+Lan (Default): Neither. The guard I gave you in Amir's class was deliberately bad. What you saw in the forest was real.
+Leonora (Default): So you can fight. Properly. And you chose to let the academy believe you couldn't. Why.
+Lan (Default): Because the moment people know what I can actually do, I stop being a student and start being useful to somebody.
+Lan (Default): A noble house. A faction. A war I didn't start. I'd rather be underestimated than owned.
+Leonora (Confused): That's either the most cynical thing I've heard from a commoner since I arrived, or the most honest. I haven't decided which.
+Lan (Smug): They're not always different things.
+Leonora (Default): No. They're really not.
+label thanks
+Leonora (Default): You saved my life.
+Leonora (Default): I've thought about how to say that since it happened, and every version sounded either too small or too dramatic, so I'm going to say it badly.
+Leonora (Default): You saved my life, and I have no idea why a rank {rank} commoner with something to hide would risk exposing his one advantage to do it.
+Lan (Default): You needed saving. I was there. It didn't feel complicated at the time.
+Leonora (Default): I've spent my entire life being protected by people who wanted something from it afterward.
+Leonora (Default): A title, a favor, my father's attention. You gained nothing.
+Leonora (Default): So either you're a fool, which I don't believe, or your reasons are something I haven't worked out yet.
+Lan (Sus): (What I want to say is I've known this ambush was coming since before I met you, because I lived this story before, on a screen, in another world.)
+Lan (Default): Some things I can't explain. Not won't. Can't. If I tried, you'd like me even less than you do right now.
+Leonora (Smile): That is the first thing you've said tonight I actually believe completely.
+Leonora (Smile): Everyone who lies to me tries to make the lie sound complete.
+Leonora (Smile): You told me there's a piece missing and didn't fill the gap with something convincing.
+label condition
+Leonora (Default): Here's what I've decided. I'm not going to report what I saw.
+Leonora (Default): Not to my own people, not to the faculty beyond whatever Berthram already knows.
+Leonora (Default): Your secret is safe from me, for now, on one condition.
+Lan (Smug): I'm starting to think everyone in this school keeps a list of conditions.
+Leonora (Smile): Then you're finally understanding how this world works.
+Leonora (Smile): Whatever's actually happening around my family that put six armed men in a forest with my name on their orders, you tell me the moment you can.
+Leonora (Smile): The part that keeps me, or the people around me, alive.
+Lan (Sus): You think there's more coming.
+Leonora (Default): A princess doesn't get ambushed by six professionals over nothing, and whoever arranged it won't be satisfied with one failed attempt.
+Leonora (Default): When I find out who did this, I'd like to already know whether you saw it coming.
+Lan (Sus): (I did. And I can't say it.)
+- "You'll hear it from me first."
+	set {aff_leonora} += 1
+	Lan (Default): If I ever know something that keeps you alive, you'll hear it from me before you hear it from anyone else.
+- "I'll try to be less mysterious."
+	Lan (Smug): I'll try to be less mysterious. No, really. I'll try.
+	Lan (Default): If I ever know something that keeps you alive, you'll hear it from me first.
+Lan (Default): That's the most honest promise I can make you right now.
+Leonora (Default): I'll take it. For now.
+Leonora (Default): For what it's worth, I owe you an apology. I called you a waste of a morning.
+Leonora (Default): I should have known better than to judge a fighter by the guard he chose to lose with.
+Lan (Smug): You weren't wrong to be annoyed. I was trying to make you annoyed.
+Leonora (Smile): I know. It worked exceptionally well. I'd appreciate it if you didn't try that trick on me twice.
+Lan (Smug): No promises.
+She smiled, just slightly, and walked away toward the lit windows.
+[signal arg="chapter_end:ch06"]
+[end_timeline]

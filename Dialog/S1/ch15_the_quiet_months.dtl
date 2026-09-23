@@ -1,0 +1,106 @@
+label acceptance
+[signal arg="bg:training_hall"]
+He said yes three days after Amir made the offer,
+standing in the same training hall where he'd first heard the man tell sixty first-years that rank meant nothing.
+Amir: Good. We start now. Not tomorrow. Now.
+Lan (Default): I'm still healing.
+Amir: You're healing. You're not dead. Those are different states, and only one of them excuses you from work.
+Amir: Show me your circulation. Full output, nothing held back, nothing rationed for an audience that isn't here.
+For the first time in his entire second life, Lan felt what it meant to stop apologizing for his own strength.
+Amir watched with the flat patience of a man cataloguing every leak, every wasted thread,
+and said nothing encouraging for the better part of an hour, which Lan had begun to understand was its own kind of compliment.
+Amir: You're a mess. A talented mess. We fix the mess first.
+Amir: Shir comes after, once your foundation stops leaking like a cracked jug. Tomorrow. Same time. Don't be late.
+set {stat_control} += 2
+label quiet
+[signal arg="bg:cafeteria_morning"]
+The weeks that followed had a shape Lan hadn't felt since before the accident that ended his first life.
+Ordinary ones, stacked one on top of another, nothing trying to kill him in any of them.
+Amir before the sun was properly up. The montante in the east wing with Ilia.
+Classes, meals, the particular chaos of people who'd decided, without discussing it, that they belonged to each other.
+Enriko: I've decided that Doc secretly runs a gambling ring out of the infirmary. I have no proof.
+Enriko: I simply refuse to believe a man that calm is doing nothing interesting with his free time.
+Liesel (Flat): That's insane.
+Enriko: Is it, though?
+Liesel (Flat): I have asked him what he does on weekends. He reads.
+Enriko: A cover story, if I've ever heard one.
+Veldero: You've built an entire criminal empire out of a man liking books.
+Enriko: I have instincts, Veldero. They rarely fail me.
+Veldero: They fail you constantly.
+Florentine (Smile): You're all children. I don't know why I like any of you.
+Enriko: Because we're delightful.
+Liesel (Smug): Debatable.
+Lan (Sus): (I've never had this. Not the trophies, not the tournaments, not even the quiet mountain house.)
+Lan (Sus): (People who stack themselves around a breakfast table because they want to, not because a plot requires it.)
+Lan (Sus): (I didn't examine that too closely. I was afraid, a little, of what I'd find.)
+[signal arg="freetime:ch15"]
+label kliam_said
+[signal arg="bg:records_office"]
+Leonora (Default): He won't give up a single name. Not his suppliers, not his buyers, not a location.
+Leonora (Default): Three weeks of questioning, and the interrogators have gotten one thing out of him that wasn't a joke at their expense.
+Leonora (Default): A warning. I wrote it down.
+Leonora (Default): "You're asking the wrong question.
+Leonora (Default): You should be asking what happens to people who go looking for the man who actually runs this. I've met him twice.
+Leonora (Default): Once was one time too many."
+Lan (Sus): (A set of initials on a folded note and a hooded shape in a stable that never had a face. And I don't know what either of them means.)
+Lan (Default): If a man like Kliam is scared of someone, I'd like to know who before they decide to be interested in either of us.
+Leonora (Default): So would I.
+label ledger
+He caught her once, late, in the same records office, a fresh page covered in her small, precise handwriting.
+Names, dates, arrows connecting one column to another.
+Leonora (Default): Building a case. Quietly. Properly.
+Leonora (Default): I want something that holds up in front of my father, not just something that satisfies me.
+Leonora (Default): Edric is careful and he has resources I don't, and I'm not willing to move before I'm certain,
+Leonora (Default): because the first accusation I make against him is the only one I'll get to make cleanly.
+Lan (Default): Let me know if there's anything I can do.
+Leonora (Smile): You've already done more than you know, Schwert. Go to bed. You have training in six hours.
+set {aff_leonora} += 1
+label announcement
+[signal arg="bg:notice_board"]
+It came at the end of the month, posted on every department board at once.
+MID-YEAR EVALUATIONS. FULL RANK RECALCULATION.
+Every first-year, every department, thrown back into the fire at once: practical combat, theoretical mastery,
+shir control, everything that had built the current list, subject to being rebuilt from nothing over a single brutal week.
+Enriko: Well. This should be interesting for you specifically.
+Lan (Default): Don't.
+Enriko: I'm simply noting that a certain someone has spent the last month training under the academy's head sword instructor in secret,
+Enriko: and a certain evaluation is about to ask that someone to stop pretending otherwise. {rank} is about to have a very bad week, historically speaking.
+Raiz: Schwert.
+Raiz stood at the edge of the crowd, arms folded, reading the notice with no expression at all.
+Raiz: The list gets rebuilt. I intend to still be first. Where do you intend to be?
+- "Where you are. I'll come for first."
+	set {aff_raiz} += 2
+	Lan (Smug): Wherever you are. I'll come for first.
+	Raiz: Good. A rival with a number is useless. A rival with a target isn't.
+- "Alive. That's the plan."
+	set {aff_raiz} += 0
+	Lan (Default): Alive. That's the whole plan.
+	Raiz: Modest. Try not to let it become the ceiling.
+Lan (Sus): (The number {rank} beside my name, for what I suspect, with a strange mix of relief and vertigo, is about to be the last time.)
+label luna
+[signal arg="interlude:on"]
+[signal arg="bg:closed_room"]
+Far from the academy, in a part of the capital that didn't appear on any map a student would be handed,
+Luna sat alone in a room with the shutters closed.
+A wormhole no larger than a coin opened silently in the air above her desk, and an envelope dropped through it,
+sealed in black wax with a symbol she'd learned, a long time ago, never to ignore.
+The handwriting inside was elegant, mocking, and utterly certain of itself.
+Luna. Hope the disguise is holding up. Try not to strangle anyone this semester, it complicates my paperwork.
+The boy is the one.
+I've watched enough of this particular story loop to know a load-bearing anomaly when I see it,
+and Lan Schwert is currently propping up rather more of this timeline than he understands.
+Attach yourself to him. Guard him.
+Assist him in whatever way the situation calls for, official or otherwise,
+and do try to be subtle about it, subtlety being somewhat outside your usual repertoire.
+Do this properly and we both get what we want eventually. Him, whatever it is people like him actually want.
+Me, five minutes alone with a particular Evil God and several centuries of accumulated grievance.
+Don't disappoint me. It's been a very long time since anything has, and I've grown bored of the streak. N.I.
+Luna read it twice, folded it with careful hands,
+and sat for a long moment in the closed-shutter dark before she allowed herself something that might, on anyone else's face, have passed for a smile.
+Luna (Serious): Finally.
+For the first time since arriving at Tausend Sterne, she began to actually plan.
+set {luna_letter_seen} = 1
+[signal arg="interlude:off"]
+[signal arg="season_end:s1"]
+[signal arg="chapter_end:ch15"]
+[end_timeline]

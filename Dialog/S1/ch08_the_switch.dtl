@@ -1,0 +1,81 @@
+label idiots
+[signal arg="bg:library_evening"]
+Enriko: Okay, hypothetically, if each of us had to marry one professor at this academy, purely for the storytelling value, who's it going to be?
+Veldero: That is not a hypothetical anyone needs.
+Enriko: It's an excellent hypothetical. Lan, back me up.
+Lan (Smug): Depends. Does the marriage come with tenure, or do I have to attend the wedding in full academy uniform?
+Enriko: Obviously full uniform. Nobody negotiates their way out of the uniform.
+Lan (Smug): Then I withdraw entirely. I've seen what happens to people who commit to a look for the aesthetic alone.
+Enriko: Fine, I'll go first. Adelaide. Terrifying, brilliant, and I have a theory she secretly finds me delightful under all that scolding.
+Veldero: You have a theory about everyone finding you delightful.
+Lan (Smug): It is genuinely never correct.
+Enriko: Your turn, Veldero. And it has to be a real answer, not "Instructor Amir, because I fear him," like last time.
+Veldero: Fear is simply respect with better instincts.
+Enriko: Lan, you're being suspiciously quiet.
+- "Doc. Free tea, doesn't ask questions."
+	Lan (Smug): Doc. Free tea, doesn't ask questions, wouldn't notice if I missed a class for a month.
+	Enriko: That's not a real answer, that's a description of your ideal landlord.
+	Lan (Smug): I contain multitudes.
+- "I don't have a favorite."
+	Lan (Default): I don't have a favorite.
+	Veldero: That's exactly what someone with a favorite says.
+	Lan (Smug): I contain multitudes.
+They sat like that for a while, three people who'd stopped needing every silence filled.
+Veldero: You ever miss home?
+Enriko: Sometimes. My family's loud.
+Enriko: Too many cousins, too many business dinners where somebody's trying to marry me off for trade reasons.
+Enriko: It's a good kind of loud.
+Enriko: I miss it the way you miss a noise that used to keep you awake and now the quiet keeps you up instead.
+Lan (Sus): (A porch. A father who split logs without ever explaining why. A family who waved me off smiling like exile was the happiest day of their lives.)
+- "Sometimes. It's complicated."
+	set {aff_veldero} += 1
+	Lan (Default): Sometimes. It's complicated. I don't think I'd go back even if I could, but that's not the same as not missing it.
+	Something shifted in Veldero's face at that, recognition maybe, before he covered it with the easy smile everyone knew him by.
+	Veldero: Yeah. I miss it more than I let on. There are people back there I think about a lot. More than I'd expect, this far in.
+- "Not really."
+	Lan (Default): Not really. I try not to.
+	Veldero: Lucky.
+Enriko: Careful. That almost sounded sincere. I don't know what to do with sincere Veldero.
+Veldero: I'll never do it again, I promise.
+Lan (Smug): Their haircuts are terrible, though.
+Veldero: Objectively terrible.
+label spar
+[signal arg="bg:east_wing_night"]
+Dialog/Ilia (Goof): Evening, my secret little swordsman. Evening, Liesel. I brought you something. Don't tell anyone, it's against at least two academy rules.
+Liesel (Flat): Bribery.
+Dialog/Ilia (Goof): Friendship, technically, but I understand the confusion.
+She drew her rapier, took her stance, and the whole room changed.
+One second she was laughing about a bun's questionable filling, and the next her eyes had gone flat and focused and entirely still.
+Dialog/Ilia (Def): Ready?
+Lan (Combat): Ready.
+[signal arg="combat:spar_ilia"]
+She came in fast, a blur of thrusts testing his guard from three angles before he'd registered the first.
+Every attack came from a slightly different line, forcing him to solve it fresh each time.
+Dialog/Ilia (Def): Dead. You leave the same half-second gap every time you commit to a full arc.
+Dialog/Ilia (Def): Big weapon, big commitment, and I only need the half-second you're stuck inside it.
+Lan (Smug): Noted. Again?
+Dialog/Ilia (Happy): Obviously again. This is the most fun I've had in months. Please don't ever get better at closing that gap. I'd miss it.
+set {stat_sword} += 1
+set {aff_ilia} += 1
+They went four more rounds, and Lan lost three of the four, cleanly and honestly,
+and walked away from every loss feeling more like himself than he had in weeks.
+Dialog/Ilia (Goof): Same time Thursday?
+Lan (Smile): Same time Thursday.
+label staying
+Liesel (Default): I've been thinking about the arrangement. The party was one class. You never actually asked whether I intended to keep showing up after it ended.
+Liesel (Default): I've decided I'm going to. Not because you asked again. You didn't, which is probably why I'm telling you now.
+Liesel (Default): I'd rather choose it than be recruited into it twice.
+Lan (Default): I wasn't going to ask again. I didn't want to push.
+Liesel (Smile): I noticed. It's part of why I'm agreeing. For the record, Schwert, you're stuck with me now. Officially.
+- "Wouldn't dream of talking you out of it."
+	set {aff_liesel} += 2
+	Lan (Smile): I wasn't planning to try.
+- "Then you're on the hook for my medical bills."
+	set {aff_liesel} += 1
+	Lan (Smug): Then you're on the hook for my medical bills.
+	Liesel (Smug): I'll bill you in ginger candy.
+set {liesel_joined} = 1
+The two of them walked back toward the dormitories together in a silence that had, somewhere over the last few weeks, stopped needing to be filled.
+[signal arg="freetime:ch08"]
+[signal arg="chapter_end:ch08"]
+[end_timeline]

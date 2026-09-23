@@ -1,0 +1,98 @@
+label rumors
+[signal arg="bg:cafeteria_morning"]
+Enriko: Three different people told me you used a forbidden technique. One version has you channeling gi through your teeth.
+Enriko: I don't even know what that would accomplish. Another says Han's family is going to formally protest to the Headmaster.
+Enriko: A third says you're secretly the bastard son of a war hero, which is the most boring theory circulating, and I'm disappointed in whoever started it.
+Lan (Default): None of that happened.
+Enriko: Obviously. Doesn't matter. By dinner there'll be six more versions.
+Enriko: You're not rank {rank} anymore, if that wasn't clear.
+Enriko: You're rank {rank}, allegedly, according to a piece of paper nobody currently believes.
+label amir_nod
+[signal arg="bg:training_yard"]
+He was crossing the training hall's outer yard when he saw Instructor Amir, standing exactly where memory now insisted he'd stood during the duel.
+Arms crossed, weight settled, watching Lan cross the yard with an expression that gave away nothing.
+Amir didn't call him over. When Lan met his eyes, Amir gave the smallest possible nod. Not approval, not disapproval. Acknowledgment.
+Lan (Sus): (Berthram. Leonora. Ilia. Liesel, in her own way. And now him. A list I can no longer pretend is short.)
+label raiz
+He almost walked past the man leaning against the yard wall. White hair, desert gray, a straight-backed, coiled kind of stillness.
+Raiz: Schwert.
+Lan (Sus): (Raiz Al Khalid. Rank one.)
+Raiz: You beat Han with a practice sword. He was taking something. I don't care about the something.
+Raiz: I care about the four minutes before it, where you were giving ground on purpose. Why?
+- Answer directly
+	set {aff_raiz} += 2
+	Lan (Default): To read his rhythm. His rapier work is textbook and his feet are lazy.
+	Lan (Default): By the fourth exchange I knew where he'd overcommit. The pill just made him faster. It didn't fix any of that.
+	Raiz: Hm. That's a real answer. Most people would say they were lucky.
+	Raiz: Han's guard is trash. You're the first who bothered saying why.
+- Play it down
+	set {aff_raiz} += 0
+	Lan (Acting): I panicked and it went well.
+	Raiz: I've heard that line from cowards and liars. Which are you?
+	Lan (Default): Neither. Just tired.
+	Raiz: Hm.
+- Make a joke
+	set {aff_raiz} -= 1
+	Lan (Smug): Practice sword, practice guard. I was getting my steps in.
+	Raiz: I don't have patience for jokes. Come back when you have an argument.
+Raiz: Al-Tale'a measures people by what they do, not their number. I'll be watching, Schwert.
+label kliam
+[signal arg="bg:library_corner"]
+Lan (Talk): Have you ever heard the name Kliam?
+Enriko's easy expression flickered. Not recognition exactly. The alertness of a man realizing a question had weight behind it.
+Enriko: Should I have?
+Lan (Default): There was a pill. Han had it on him during the fight. I want to know where something like that comes from.
+Enriko: An unmarked pill at a school full of teenagers who'd kill for an edge on the rank list.
+Enriko: That's the kind of thing that gets an academy shut down if it's traced back far enough.
+Lan (Talk): Can you find out anything?
+Enriko: I can ask around. Carefully. My family does business in the lower district, officially and otherwise.
+Enriko: But asking loudly is a good way to get hurt by people who aren't first-years with something to prove.
+Lan (Default): I'm aware.
+Enriko: I know you're aware.
+Enriko: I'm saying it anyway, because you have a bad habit of hearing a warning and doing the thing regardless.
+Enriko: Try not to duel anyone else in the meantime. My toast budget can't take the stress.
+- Ask how Veldero is holding up
+	Lan (Talk): How's Veldero doing? He's been quiet.
+	Enriko: He's fine. He reads the syllabus now. It's terrifying.
+- Move on
+	Lan (Smug): I'll try. No promises.
+set {aff_enriko} += 1
+label night
+[signal arg="bg:east_wing_night"]
+The east wing was quiet and cold, the moonlight cutting its usual long silver stripe.
+Lan had lost three exchanges in a row before he'd registered that he was losing.
+Dialog/Ilia (Def): You're somewhere else tonight. I should warn you I don't slow down for off nights. That's not what you're paying me for.
+Lan (Default): I'm listening.
+Dialog/Ilia (Def): You're really not.
+[signal arg="combat:spar_ilia_distracted"]
+Lan (Sus): (Kliam. A mid-tier threat, buried deep, not supposed to surface for real until the second year.)
+Lan (Sus): (If he's already moving, what else is moving that I don't have a page for? If he shows up before I'm ready, I'd lose.)
+Lan (Sus): (Not struggle. Lose.)
+He didn't see the fifth attack coming at all.
+She swept his legs, clean and precise, and put him on his back with her rapier resting lightly against his throat.
+Dialog/Ilia (Def): That's a real hit, from someone who was actually trying, against someone who very clearly wasn't. Which is new.
+Dialog/Ilia (Def): You don't usually let me get that close.
+Liesel (Flat): You've been like this for two days. Since the duel. You go somewhere else in the middle of conversations.
+Liesel (Flat): You didn't finish your food twice this week, and you never leave food unfinished.
+Liesel (Flat): What happened out there that you haven't told anyone?
+Dialog/Ilia (Def): She's right. I've sparred with a lot of distracted people. This isn't distracted. This is carrying something.
+- Give them the largest true piece
+	set {aff_liesel} += 1
+	set {aff_ilia} += 1
+	Lan (Sus): There's something coming. Bigger than Han and his pill. I don't know exactly when, or from where.
+- Say it plainly
+	set {aff_liesel} += 1
+	Lan (Default): Something's coming. Bigger than the pill. I don't have more than that yet.
+Lan (Sus): I just know it's early, earlier than it should be, and I'm not ready for it yet.
+Liesel (Default): Then we get you ready. That's not a question. That's just what happens now.
+Dialog/Ilia (Happy): Whatever's coming early, it's going to have to get through the three of us first. Personally, I like those odds.
+label ledger
+[signal arg="bg:records_office"]
+In the same records office that had become more her office than a borrowed one,
+Leonora von Rosendael added a third name to a short list written in her own careful hand, crossed out a fourth who had an alibi, and sat back.
+Two names. A forty-minute gap in a patrol schedule.
+And a growing certainty that whoever had authorized it was someone whose name she'd recognize the moment she proved it.
+She did not sleep well that night. She kept working anyway.
+[signal arg="freetime:ch11"]
+[signal arg="chapter_end:ch11"]
+[end_timeline]
