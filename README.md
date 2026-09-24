@@ -12,6 +12,13 @@
 </p>
 
 <!-- Add a screenshot or GIF here: ![Gameplay](docs/screenshot.png) -->
+<img width="620" height="1280" alt="Iliako HalfBody" src="https://github.com/user-attachments/assets/0fe5c7c1-77c2-4a9e-a8ed-b8609c7eb4ca" />
+
+<img width="1159" height="728" alt="image" src="https://github.com/user-attachments/assets/b6c1d0ff-fdba-40d6-bc52-248652d170b9" />
+<img width="1153" height="647" alt="image" src="https://github.com/user-attachments/assets/90ed7c18-893d-48bf-a32b-149647beaf79" />
+<img width="1149" height="643" alt="image" src="https://github.com/user-attachments/assets/9dfddd34-a6e1-4d36-a918-d4c168a4e1bc" />
+
+
 
 ## About
 
