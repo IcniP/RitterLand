@@ -13,6 +13,8 @@ var equipment: Dictionary = {}   # slot -> item id
 ## before that the game auto-picks the 4 strongest learned skills.
 var skill_loadout: Array = []
 var loadout_customized: bool = false
+## Weapon users (Lan): weapon -> 4 skill ids ("" = empty). Magic skills sit in the same slot of every weapon.
+var weapon_loadout: Dictionary = {}
 
 ## Returns how many levels were gained.
 func add_xp(amount: int) -> int:
@@ -42,7 +44,7 @@ func spend_point(stat: String) -> bool:
 func to_dict() -> Dictionary:
 	return {"level": level, "xp": xp, "stat_points": stat_points,
 		"allocated": allocated.duplicate(), "equipment": equipment.duplicate(),
-		"skill_loadout": skill_loadout.duplicate(), "loadout_customized": loadout_customized}
+		"skill_loadout": skill_loadout.duplicate(), "loadout_customized": loadout_customized, "weapon_loadout": weapon_loadout.duplicate(true)}
 
 static func from_dict(d: Dictionary) -> CharacterProgress:
 	var p := CharacterProgress.new()
@@ -56,4 +58,6 @@ static func from_dict(d: Dictionary) -> CharacterProgress:
 	for id in d.get("skill_loadout", []):
 		p.skill_loadout.append(str(id))
 	p.loadout_customized = bool(d.get("loadout_customized", false))
+	for w in d.get("weapon_loadout", {}):
+		p.weapon_loadout[str(w)] = (d["weapon_loadout"][w] as Array).map(func(x): return str(x))
 	return p

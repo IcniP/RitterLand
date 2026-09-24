@@ -202,15 +202,37 @@ func award_xp(character_ids: Array, amount: int) -> Dictionary:
 
 ## Put a learned skill into one of the 4 loadout slots ("" = empty the slot).
 ## If the skill is already in another slot the two slots swap.
-func set_skill_slot(character_id: String, slot_index: int, skill_id: String) -> bool:
+## Weapon users (Lan) have one bar per `weapon`; a magic skill (weapon "") takes the
+## SAME slot in every weapon bar, and removing/replacing it there clears it from all bars.
+func set_skill_slot(character_id: String, slot_index: int, skill_id: String, weapon: String = "") -> bool:
 	if slot_index < 0 or slot_index >= SkillDB.MAX_LOADOUT:
 		return false
 	var p := get_progress(character_id)
+	var s: SkillData = null
 	if skill_id != "":
-		var s := SkillDB.get_skill(skill_id)
+		s = SkillDB.get_skill(skill_id)
 		if s == null or s.is_ultimate or not SkillDB.unlocked_skills(character_id, p.level).has(s):
 			return false
 	SkillDB.ensure_customized(character_id)
+	if SkillDB.START_WEAPON.has(character_id):
+		if weapon == "":
+			weapon = SkillDB.START_WEAPON[character_id]
+		if not SkillDB.SWAP.has(weapon) or (s != null and not SkillDB._fits(s, weapon)):
+			return false
+		var old_s: SkillData = SkillDB.get_skill(str(p.weapon_loadout[weapon][slot_index]))
+		if old_s != null and old_s.weapon == "":   # the slot held a shared magic skill: free it everywhere
+			for w in SkillDB.SWAP:
+				if p.weapon_loadout[w][slot_index] == old_s.id:
+					p.weapon_loadout[w][slot_index] = ""
+		var targets: Array = SkillDB.SWAP.keys() if (s != null and s.weapon == "") else [weapon]
+		for w in targets:
+			var bar: Array = p.weapon_loadout[w]
+			var other: int = bar.find(skill_id) if skill_id != "" else -1
+			if other != -1 and other != slot_index:
+				bar[other] = ""
+			bar[slot_index] = skill_id
+		progression_changed.emit()
+		return true
 	if skill_id != "":
 		var other: int = p.skill_loadout.find(skill_id)
 		if other != -1 and other != slot_index:

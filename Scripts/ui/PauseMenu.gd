@@ -437,35 +437,44 @@ func _refresh_char() -> void:
 		opt.item_selected.connect(func(idx: int): Global.equip(id, slot, ids[idx]))
 		row.add_child(opt)
 
-	# --- Skills (max 4 equipped) ---
+	# --- Skills (max 4 equipped; weapon users like Lan get one bar per weapon) ---
 	_char_body.add_child(HSeparator.new())
-	_char_body.add_child(_label("Skills   (equip up to %d - using skills charges the ultimate)" % SkillDB.MAX_LOADOUT, 20))
+	_char_body.add_child(_label("Skills   (equip up to %d per bar - using skills charges the ultimate)" % SkillDB.MAX_LOADOUT, 20))
 	var unlocked: Array = SkillDB.unlocked_skills(id, prog.level)
-	var auto_loadout: Array = SkillDB.get_loadout(id)
-	for i in range(SkillDB.MAX_LOADOUT):
-		var srow := HBoxContainer.new()
-		srow.add_theme_constant_override("separation", 10)
-		_char_body.add_child(srow)
-		var sl2 := _label("Skill %d" % (i + 1), 16)
-		sl2.custom_minimum_size = Vector2(110, 0)
-		srow.add_child(sl2)
-		var sopt := OptionButton.new()
-		sopt.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		sopt.disabled = in_combat
-		var sids: Array = [""]
-		sopt.add_item("(empty)")
-		for sk in unlocked:
-			sopt.add_item("%s   (%s)" % [sk.display_name, sk.summary()])
-			sids.append(sk.id)
-		var cur := ""
-		if prog.loadout_customized:
-			cur = str(prog.skill_loadout[i]) if i < prog.skill_loadout.size() else ""
-		elif i < auto_loadout.size():
-			cur = auto_loadout[i].id
-		sopt.select(maxi(sids.find(cur), 0))
-		var slot_i: int = i
-		sopt.item_selected.connect(func(idx: int): Global.set_skill_slot(id, slot_i, sids[idx]))
-		srow.add_child(sopt)
+	var bars: Array = SkillDB.SWAP.keys() if SkillDB.START_WEAPON.has(id) else [""]
+	for w in bars:
+		var fits: Array = unlocked.filter(func(sk): return SkillDB._fits(sk, w)) if w != "" else unlocked
+		var cur_bar: Array = SkillDB.get_loadout(id, w).map(func(x): return x.id)
+		if w != "":
+			_char_body.add_child(_label("%s bar   (magic skills use the same slot in both bars)" % w.capitalize(), 16, Color(0.9, 0.8, 0.5)))
+		for i in range(SkillDB.MAX_LOADOUT):
+			var srow := HBoxContainer.new()
+			srow.add_theme_constant_override("separation", 10)
+			_char_body.add_child(srow)
+			var sl2 := _label("Skill %d" % (i + 1), 16)
+			sl2.custom_minimum_size = Vector2(110, 0)
+			srow.add_child(sl2)
+			var sopt := OptionButton.new()
+			sopt.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			sopt.disabled = in_combat
+			var sids: Array = [""]
+			sopt.add_item("(empty)")
+			for sk in fits:
+				sopt.add_item("%s%s   (%s)" % [sk.display_name, "  [shared]" if w != "" and sk.weapon == "" else "", sk.summary()])
+				sids.append(sk.id)
+			var cur := ""
+			if prog.loadout_customized and w != "":
+				var wl: Array = prog.weapon_loadout.get(w, [])
+				cur = str(wl[i]) if i < wl.size() else ""
+			elif prog.loadout_customized:
+				cur = str(prog.skill_loadout[i]) if i < prog.skill_loadout.size() else ""
+			elif i < cur_bar.size():
+				cur = cur_bar[i]
+			sopt.select(maxi(sids.find(cur), 0))
+			var slot_i: int = i
+			var weapon_w: String = w
+			sopt.item_selected.connect(func(idx: int): Global.set_skill_slot(id, slot_i, sids[idx], weapon_w))
+			srow.add_child(sopt)
 
 	_char_body.add_child(_label("All skills (higher level = stronger)", 16, Color(0.8, 0.8, 0.8)))
 	for sk in SkillDB.skills_for_character(id):

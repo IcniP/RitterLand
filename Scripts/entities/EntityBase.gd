@@ -36,6 +36,8 @@ const CHARGE_MAX := 100.0
 ## Key into Global.progress. "" = no progression (enemies). Lan becomes
 ## "player" automatically; PartyRoster sets it for party members.
 var character_id: String = ""
+## Current weapon (only Lan swaps; "" = fixed weapon). Set lazily by SkillDB.weapon_of().
+var weapon: String = ""
 var level: int = 1
 var _base_stats: Dictionary = {}
 
@@ -68,7 +70,7 @@ func _physics_process(_delta: float) -> void:
 
 ## The (max 4) skills equipped for battle.
 func get_battle_skills() -> Array:
-	return SkillDB.get_loadout(character_id)
+	return SkillDB.get_loadout(character_id, SkillDB.weapon_of(self))
 
 func get_ultimate_skill() -> SkillData:
 	if character_id == "":

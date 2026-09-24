@@ -343,12 +343,19 @@ func process_single_action(action: BattleAction) -> void:
 		var target = action.target_unit
 		if not _is_live(target):
 			return
-		var dist := _manhattan(world_to_cell(actor.global_position), world_to_cell(target.global_position))
-		if dist != 1:
+		if not SkillDB.basic_in_reach(actor, world_to_cell(actor.global_position), world_to_cell(target.global_position)):
 			return  # target moved/died - attack fizzles
 		await _play_attack_lunge(actor, target)
-		if _is_live(target):
-			target.take_damage(actor.get_effective_stat(StatusEffect.StatType.ATK), actor)
+		var n: int = SkillDB.basic_for(actor).hits
+		for _i in n:
+			if _is_live(target):
+				target.take_damage(SkillDB.basic_damage(actor) / n, actor)
+		var splash: float = SkillDB.basic_for(actor).get("splash", 0.0)
+		if splash > 0.0:
+			var tc := world_to_cell(target.global_position)
+			for u in units:
+				if u != target and _is_live(u) and is_opponent(actor, u) and _manhattan(world_to_cell(u.global_position), tc) == 1:
+					u.take_damage(int(SkillDB.basic_damage(actor) * splash), actor)
 		_check_combat_end()
 
 	elif action.action_type == BattleAction.Type.SKILL:
@@ -457,15 +464,52 @@ func _execute_skill(actor: Node2D, action: BattleAction) -> void:
 		if not _is_live(t):
 			continue
 		if skill.power > 0.0:
-			var dmg: int = int(actor.get_effective_stat(StatusEffect.StatType.ATK) * skill.power)
-			t.take_damage(dmg, actor, skill.def_pierce)
+			var total: float = actor.get_effective_stat(StatusEffect.StatType.ATK) * skill.power \
+				+ actor.get_effective_stat(StatusEffect.StatType.SPD) * skill.spd_scale
+			for _i in skill.hits:
+				if _is_live(t):
+					t.take_damage(int(total / skill.hits), actor, skill.def_pierce)
 		if skill.effect and _is_live(t):
 			t.apply_status_effect(skill.effect)
+
+	if skill.pull > 0:
+		var center: Vector2i = action.skill_target_cell if skill.cast_range > 0 else origin
+		hit.sort_custom(func(a, b): return _manhattan(world_to_cell(a.global_position), center) < _manhattan(world_to_cell(b.global_position), center))
+		for t in hit:
+			if _is_live(t) and not t.get("is_boss"):   # bosses can't be pulled
+				var before := world_to_cell(t.global_position)
+				await _pull_toward(t, center, skill.pull)
+				if t is EnemyNPC and world_to_cell(t.global_position) != before:
+					clear_remaining_actions_for_unit(t)   # its planned route is stale: it loses the turn
 
 	# Using a skill charges the ultimate bar.
 	if not skill.is_ultimate:
 		actor.gain_charge(skill.charge_gain)
 	_check_combat_end()
+
+# Slide a unit up to `steps` tiles toward `center`. Only enters free tiles, so
+# nobody stacks: it tries the longer axis first, then the other, else stops.
+func _pull_toward(t: Node2D, center: Vector2i, steps: int) -> void:
+	for _i in steps:
+		var c := world_to_cell(t.global_position)
+		var d := center - c
+		if d == Vector2i.ZERO:
+			return
+		var sx := Vector2i(signi(d.x), 0)
+		var sy := Vector2i(0, signi(d.y))
+		var opts: Array[Vector2i] = []
+		opts.assign([sx, sy] if absi(d.x) >= absi(d.y) else [sy, sx])
+		var moved := false
+		for o in opts:
+			if o == Vector2i.ZERO:
+				continue
+			var n := c + o
+			if _cell_open(n) and unit_at_cell(n, t) == null:
+				await t.move_to_grid_target(cell_to_world(n))
+				moved = true
+				break
+		if not moved:
+			return
 
 # PLACEHOLDER (no animations yet): a short pause and a colour flash on the targets.
 func _play_skill_placeholder(skill: SkillData, hit: Array) -> void:

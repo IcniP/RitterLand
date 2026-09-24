@@ -44,6 +44,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	if turn_manager and turn_manager.current_phase == turn_manager.BattlePhase.PLANNING:
 		# Hotkeys: 1-4 = the unit's skills, 5 = ultimate.
 		if event is InputEventKey and event.pressed and not event.echo:
+			if event.keycode == KEY_Q:
+				if selected_unit != null and not (selected_unit is EnemyNPC):
+					toggle_skill(SkillDB.basic_skill(selected_unit))   # basic attack, with grid highlight
+				return
+			if event.keycode == KEY_E:
+				do_special()
+				return
 			var idx := -1
 			match event.keycode:
 				KEY_1: idx = 0
@@ -191,9 +198,8 @@ func queue_melee_attack(target: Node2D) -> void:
 		return
 	var from_cell: Vector2i = get_current_unit_end_cell()
 	var to_cell: Vector2i = turn_manager.world_to_cell(target.global_position)
-	var dist: int = absi(from_cell.x - to_cell.x) + absi(from_cell.y - to_cell.y)
-	if dist != 1:
-		print("Musuh terlalu jauh! Dekati dulu (harus bersebelahan).")
+	if not SkillDB.basic_in_reach(selected_unit, from_cell, to_cell):
+		print("Musuh di luar jangkauan basic attack!")
 		return
 	var act := BattleAction.new()
 	act.action_type = BattleAction.Type.ATTACK_MELEE
@@ -277,6 +283,17 @@ func toggle_skill(skill: SkillData) -> void:
 func cancel_skill() -> void:
 	active_skill = null
 	clear_highlight()
+
+## Extra slot (E): Lan swaps longsword <-> montante. Free (0 AP), takes effect at once.
+func do_special() -> void:
+	if selected_unit == null or selected_unit is EnemyNPC:
+		return
+	var w := SkillDB.weapon_of(selected_unit)
+	if w == "":
+		return
+	selected_unit.weapon = SkillDB.SWAP[w]
+	cancel_skill()
+	print(selected_unit.name, " berganti senjata: ", selected_unit.weapon)
 
 func _hotkey_skill(index: int) -> void:
 	if selected_unit == null or selected_unit is EnemyNPC:

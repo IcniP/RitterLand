@@ -8,6 +8,10 @@
 class_name CombatHUD
 extends CanvasLayer
 
+## Icons for the Q / E slots. Empty for now: drag a texture in later.
+@export var basic_icon: Texture2D
+@export var special_icon: Texture2D
+
 const BUFF_COLOR := "lime"
 const DEBUFF_COLOR := "tomato"
 
@@ -281,12 +285,16 @@ func _update_skill_bar() -> void:
 	for s in skills:
 		sig.append(s.id)
 	sig.append(ult.id if ult else "")
+	sig.append(SkillDB.weapon_of(unit))
+	sig.append(SkillDB.basic_skill(unit).id)
 	if sig != _skill_sig:
 		_skill_sig = sig
-		_rebuild_skill_buttons(skills, ult)
+		_rebuild_skill_buttons(unit, skills, ult)
 
 	for entry in _skill_buttons:
 		var s: SkillData = entry["skill"]
+		if s == null:
+			continue   # the E special button has no skill
 		var b: Button = entry["button"]
 		b.disabled = not input_handler.can_use_skill(unit, s)
 		b.set_pressed_no_signal(input_handler.active_skill == s)
@@ -297,21 +305,34 @@ func _update_skill_bar() -> void:
 	elif _skill_buttons.is_empty():
 		_skill_hint.text = "No skills learned yet."
 	else:
-		_skill_hint.text = "Skills: click a button or press 1-4  (5 = ultimate)"
+		_skill_hint.text = "Skills: 1-4  |  Q = basic attack  |  E = special (Lan: swap weapon, free)  |  5 = ultimate"
 
-func _rebuild_skill_buttons(skills: Array, ult: SkillData) -> void:
+func _rebuild_skill_buttons(unit: Node, skills: Array, ult: SkillData) -> void:
 	for c in _skill_row.get_children():
 		_skill_row.remove_child(c)
 		c.queue_free()
 	_skill_buttons.clear()
+	var basic := SkillDB.basic_skill(unit)
+	_add_skill_button(basic, "[Q] %s\n%d AP" % [basic.display_name, basic.ap_cost], basic_icon)
+	var w := SkillDB.weapon_of(unit)
+	if w != "":
+		var sp := Button.new()
+		sp.text = "[E] Swap Weapon\nnow: %s  (free)" % w
+		sp.icon = special_icon
+		sp.focus_mode = Control.FOCUS_NONE
+		sp.custom_minimum_size = Vector2(140, 50)
+		sp.pressed.connect(func(): input_handler.do_special())
+		_skill_row.add_child(sp)
+		_skill_buttons.append({"button": sp, "skill": null})
 	for i in range(skills.size()):
 		_add_skill_button(skills[i], "[%d] %s\n%d SP   %d AP" % [i + 1, skills[i].display_name, skills[i].sp_cost, skills[i].ap_cost])
 	if ult:
 		_add_skill_button(ult, "[5] %s\nULTIMATE   %d AP" % [ult.display_name, ult.ap_cost])
 
-func _add_skill_button(skill: SkillData, text: String) -> void:
+func _add_skill_button(skill: SkillData, text: String, icon: Texture2D = null) -> void:
 	var b := Button.new()
 	b.text = text
+	b.icon = icon
 	b.toggle_mode = true
 	b.focus_mode = Control.FOCUS_NONE       # so SPACE (execute turn) never presses a button
 	b.custom_minimum_size = Vector2(140, 50)
