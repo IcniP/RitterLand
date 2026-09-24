@@ -1,7 +1,7 @@
 extends DialogicAnimation
 ## Stardew-style portrait swap: old portrait fades fast, new one pops in
 ## with a small hop and a white flash that fades to normal.
-const HOP := 14.0   # pixels, tune to taste
+const HOP := 0.0   # pixels, tune to taste
 const FLASH := 3.0  # >1 = brighter than white
 
 func animate() -> void:

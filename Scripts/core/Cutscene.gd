@@ -4,7 +4,7 @@
 #  * [signal arg="combat:<anything>"] pauses the timeline, hides the textbox, runs the
 #    scene's CombatZone, and resumes the dialogue when the fight is over.
 #    Result: Dialogic.VAR.combat_won (1/0) -> use `if {combat_won}:` in the .dtl.
-#  * Optional stage commands: hop:Name (surprise jump), enter:Name:x:y  move:Name:x:y[:secs]  leave:Name
+#  * Optional stage commands: enter:Name:x:y  move:Name:x:y[:secs]  leave:Name
 extends Node
 
 const ACTOR := preload("res://scenes/IliaNpc.tscn")   # PLACEHOLDER: swap per character later
@@ -48,12 +48,6 @@ func get_actor(id: String) -> Node2D:
 func _on_speaker(c: DialogicCharacter) -> void:
 	if c: get_actor(c.get_identifier().get_file())        # just make sure they exist ("Dialog/Ilia" -> "Ilia")
 
-func _hop(a: Node2D) -> void:                             # surprise jump: [signal arg="hop:Name"]
-	if a == null: return
-	var t := a.create_tween()
-	t.tween_property(a, "position:y", a.position.y - 4, 0.08)
-	t.tween_property(a, "position:y", a.position.y, 0.08)
-
 # ---------- signals ----------
 func _on_signal(arg: String) -> void:
 	var p := arg.split(":")
@@ -61,7 +55,6 @@ func _on_signal(arg: String) -> void:
 		"enter":  # enter:Name:x:y
 			var a := get_actor(p[1])
 			if a and p.size() > 3: a.global_position = Vector2(float(p[2]), float(p[3]))
-		"hop": _hop(get_actor(p[1]))
 		"leave":
 			if actors.has(p[1]): actors[p[1]].queue_free(); actors.erase(p[1])
 		"move":   # move:Name:x:y[:secs]
