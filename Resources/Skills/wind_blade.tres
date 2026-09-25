@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://cj8e5ixqk6kln"]
+
+[ext_resource type="Script" uid="uid://7bu3ymqqprjr" path="res://Scripts/resources/SkillData.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ckisadsgoemfp" path="res://Assets/Effect/01.png" id="1_36jx2"]
+[ext_resource type="Texture2D" uid="uid://d0v0ak65lk773" path="res://Assets/Effect/Holy VFX 01 Initial.png" id="3_cpy6q"]
+[ext_resource type="Texture2D" uid="uid://b27bhhamjsq5j" path="res://Assets/icon/64x64.png" id="9_o18ee"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1822"]
+atlas = ExtResource("1_36jx2")
+region = Rect2(0, 64, 448, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
+atlas = ExtResource("9_o18ee")
+region = Rect2(512, 3072, 64, 64)
+
+[resource]
+script = ExtResource("1")
+id = "wind_blade"
+display_name = "Wind Blade"
+description = "A cutting wind flies in a straight line."
+category = 1
+shape = 2
+min_level = 2
+sp_cost = 3
+power = 1.0
+cast_range = 5
+def_pierce = 0.5
+icon = SubResource("AtlasTexture_xrivr")
+effect_sprite = SubResource("AtlasTexture_h1822")
+effect_hframes = 7
+projectile_sprite = ExtResource("3_cpy6q")
+projectile_hframes = 2

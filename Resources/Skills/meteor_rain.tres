@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/resources/SkillData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "meteor_rain"
+display_name = "Meteor Rain"
+description = "Ilia's ultimate."
+category = 1
+shape = 1
+target_side = 0
+min_level = 3
+sp_cost = 0
+ap_cost = 2
+power = 4.5
+cast_range = 5
+radius = 2
+def_pierce = 0.5
+charge_gain = 0.0
+is_ultimate = true
+weapon = ""
+pull = 0
+effect_hframes = 1
+effect_vframes = 1
+effect_fps = 12.0
+spd_scale = 0.0
+hits = 1
+effect = null
+icon = null
+effect_sprite = null

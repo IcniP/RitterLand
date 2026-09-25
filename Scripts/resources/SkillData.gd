@@ -44,6 +44,28 @@ enum TargetSide { ENEMIES, ALLIES }
 @export var charge_gain: float = 20.0
 ## Ultimates cost a FULL charge bar instead of SP and are not part of the 4-skill loadout.
 @export var is_ultimate: bool = false
+## Shown on its hotkey button instead of the name (drag a texture into this field in the .tres).
+@export var icon: Texture2D
+## Optional one-shot VFX spritesheet played on each hit target. Sliced into
+## effect_hframes x effect_vframes equal frames and played once.
+@export var effect_sprite: Texture2D
+@export var effect_hframes: int = 1
+@export var effect_vframes: int = 1
+@export var effect_fps: float = 12.0
+## PROJECTILE only: a sprite that visibly flies from caster to target before
+## the effect above plays on impact (e.g. an arrow or fireball). Drawn facing
+## RIGHT by default -- it is rotated to match the flight direction at runtime.
+@export var projectile_sprite: Texture2D
+@export var projectile_hframes: int = 1
+@export var projectile_vframes: int = 1
+@export var projectile_fps: float = 12.0
+## Travel speed in pixels/second (higher = faster arrow).
+@export var projectile_speed: float = 500.0
+## PROJECTILE only: on impact, also hits every unit within this many tiles
+## (Manhattan distance) of the impact point, at splash_power x the normal hit.
+## 0 = no splash (a normal single-target projectile).
+@export var splash_radius: int = 0
+@export var splash_power: float = 0.5
 
 func shape_name() -> String:
 	match shape:

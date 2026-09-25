@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Scripts/resources/SkillData.gd" id="1"]
+[ext_resource type="Texture2D" path="res://Assets/Effect/Holy VFX 01 Repeatable.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "gale_cleave"
+display_name = "Gale Cleave"
+description = "A whirlwind lands on a tile you pick."
+category = 1
+shape = 1
+target_side = 0
+min_level = 9
+sp_cost = 8
+ap_cost = 2
+power = 1.8
+cast_range = 4
+radius = 1
+def_pierce = 0.5
+charge_gain = 20.0
+is_ultimate = false
+weapon = ""
+pull = 0
+effect_hframes = 8
+effect_vframes = 1
+effect_fps = 12.0
+spd_scale = 0.0
+hits = 1
+effect = null
+icon = null
+effect_sprite = ExtResource("2")

@@ -132,6 +132,49 @@ func move_to_grid_target(target_world_pos: Vector2) -> void:
 	await tween.finished
 	_update_animation(Vector2.ZERO)
 
+## Bumped every time play_attack() runs, so an older/stale call can never
+## overwrite the animation set by a newer one after it wakes up from its await.
+var _attack_token: int = 0
+
+## Plays "Attack<Dir>" once (if the sprite has it) and returns after it finishes.
+## Falls back to just facing the target when no attack animation exists yet.
+func play_attack(dir: Vector2) -> void:
+	if dir != Vector2.ZERO:
+		if absf(dir.x) > absf(dir.y):
+			facing_direction = Vector2i.RIGHT if dir.x > 0 else Vector2i.LEFT
+		else:
+			facing_direction = Vector2i.DOWN if dir.y > 0 else Vector2i.UP
+	if animated_sprite == null:
+		return
+	var suffix := _direction_suffix()   # captured now so it can't drift while we await below
+	var anim := "Attack" + suffix
+	var frames := animated_sprite.sprite_frames
+	if frames == null or not frames.has_animation(anim):
+		print("play_attack: NO '%s' animation on %s -- skipping" % [anim, name])
+		return   # this character has no attack sprite yet -> just keep the current pose
+	_attack_token += 1
+	var my_token := _attack_token
+	# Wait by duration instead of the animation_finished signal: Godot's AnimatedSprite2D
+	# doesn't reliably re-fire/restart when play() is called with a name that was already
+	# set (e.g. attacking the same direction twice in a row), which left this stuck on the
+	# last frame. Forcing frame 0 + timing it out ourselves works no matter what.
+	frames.set_animation_loop(anim, false)
+	var fps: float = frames.get_animation_speed(anim)
+	var duration: float = (frames.get_frame_count(anim) / fps) if fps > 0.0 else 0.3
+	print("play_attack: playing '%s' for %.2fs on %s" % [anim, duration, name])
+	animated_sprite.play(anim)
+	animated_sprite.frame = 0
+	await get_tree().create_timer(duration).timeout
+	print("play_attack: timer done for '%s' on %s (still current token: %s)" % [anim, name, my_token == _attack_token])
+	if is_instance_valid(animated_sprite) and my_token == _attack_token:
+		var idle_anim := "Idle" + suffix
+		if frames.has_animation(idle_anim):
+			animated_sprite.play(idle_anim)   # same direction as the attack just played
+			print("play_attack: switched to %s on %s (frame=%s, playing=%s, visible=%s)" \
+				% [idle_anim, name, animated_sprite.frame, animated_sprite.is_playing(), animated_sprite.visible])
+		else:
+			push_warning("play_attack: no '%s' animation to switch back to on %s!" % [idle_anim, name])
+
 func _update_animation(direction: Vector2) -> void:
 	# PLACEHOLDER: replace with real AnimatedSprite2D / AnimationTree logic.
 	if animated_sprite == null:

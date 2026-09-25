@@ -325,14 +325,18 @@ func _rebuild_skill_buttons(unit: Node, skills: Array, ult: SkillData) -> void:
 		_skill_row.add_child(sp)
 		_skill_buttons.append({"button": sp, "skill": null})
 	for i in range(skills.size()):
-		_add_skill_button(skills[i], "[%d] %s\n%d SP   %d AP" % [i + 1, skills[i].display_name, skills[i].sp_cost, skills[i].ap_cost])
+		var sk: SkillData = skills[i]
+		var label: String = sk.display_name if sk.icon == null else ""   # icon set -> no name text, saves space
+		_add_skill_button(sk, "[%d] %s\n%d SP   %d AP" % [i + 1, label, sk.sp_cost, sk.ap_cost], sk.icon)
 	if ult:
-		_add_skill_button(ult, "[5] %s\nULTIMATE   %d AP" % [ult.display_name, ult.ap_cost])
+		_add_skill_button(ult, "[5] %s\nULTIMATE   %d AP" % ["" if ult.icon else ult.display_name, ult.ap_cost], ult.icon)
 
 func _add_skill_button(skill: SkillData, text: String, icon: Texture2D = null) -> void:
 	var b := Button.new()
 	b.text = text
 	b.icon = icon
+	if icon:
+		b.expand_icon = true   # icon fills the button instead of a tiny corner glyph
 	b.toggle_mode = true
 	b.focus_mode = Control.FOCUS_NONE       # so SPACE (execute turn) never presses a button
 	b.custom_minimum_size = Vector2(140, 50)

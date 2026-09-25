@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/resources/SkillData.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/resources/StatusEffect.gd" id="2"]
+
+[sub_resource type="Resource" id="StatusEffect_1"]
+script = ExtResource("2")
+id = "cyclone_prison"
+display_name = "Caught"
+stat_affected = 2
+amount = -2
+duration_turns = 2
+
+[resource]
+script = ExtResource("1")
+id = "cyclone_prison"
+display_name = "Cyclone Prison"
+description = "Advanced shir: hauls everyone into a knot and slows them."
+category = 1
+shape = 1
+target_side = 0
+min_level = 11
+sp_cost = 14
+ap_cost = 2
+power = 0.8
+cast_range = 5
+radius = 2
+def_pierce = 0.7
+charge_gain = 20.0
+is_ultimate = false
+weapon = ""
+pull = 3
+effect_hframes = 1
+effect_vframes = 1
+effect_fps = 12.0
+spd_scale = 0.0
+hits = 1
+effect = SubResource("StatusEffect_1")
+icon = null
+effect_sprite = null

@@ -366,6 +366,10 @@ func process_single_action(action: BattleAction) -> void:
 func _play_attack_lunge(actor: Node2D, target: Node2D) -> void:
 	var start: Vector2 = actor.global_position
 	var dir: Vector2 = (target.global_position - start).normalized()
+	if actor.has_method("play_attack") and actor.animated_sprite and actor.animated_sprite.sprite_frames \
+			and actor.animated_sprite.sprite_frames.has_animation("Attack" + _dir_suffix(dir)):
+		await actor.play_attack(dir)   # has a real Attack<Dir> animation: no lunge tween needed
+		return
 	if actor.has_method("_update_animation"):
 		actor._update_animation(dir)
 		actor._update_animation(Vector2.ZERO)  # face the target, then idle
@@ -373,6 +377,70 @@ func _play_attack_lunge(actor: Node2D, target: Node2D) -> void:
 	tw.tween_property(actor, "global_position", start + dir * 6.0, 0.08)
 	tw.tween_property(actor, "global_position", start, 0.08)
 	await tw.finished
+
+## "Down"/"Up"/"Left"/"Right" for a direction vector (same rule as EntityBase._direction_suffix).
+func _dir_suffix(dir: Vector2) -> String:
+	if dir == Vector2.ZERO:
+		return "Down"
+	if absf(dir.x) > absf(dir.y):
+		return "Right" if dir.x > 0 else "Left"
+	return "Down" if dir.y > 0 else "Up"
+
+## Slices `sprite` into cols x rows equal frames and returns a one-animation
+## ("play") SpriteFrames, played once at `fps`. Shared by effects and projectiles.
+func _slice_frames(sprite: Texture2D, cols: int, rows: int, fps: float) -> SpriteFrames:
+	cols = maxi(cols, 1)
+	rows = maxi(rows, 1)
+	var fw: int = sprite.get_width() / cols
+	var fh: int = sprite.get_height() / rows
+	var frames := SpriteFrames.new()
+	frames.add_animation("play")
+	frames.set_animation_loop("play", false)
+	frames.set_animation_speed("play", fps)
+	for row in rows:
+		for col in cols:
+			var tex := AtlasTexture.new()
+			tex.atlas = sprite
+			tex.region = Rect2(col * fw, row * fh, fw, fh)
+			frames.add_frame("play", tex)
+	return frames
+
+## Spawns a one-shot effect sprite (skill.effect_sprite, sliced effect_hframes x effect_vframes)
+## at a target's position, plays it once, then frees itself. No-op if the skill has no sprite set.
+func _spawn_skill_effect(skill: SkillData, target: Node2D) -> void:
+	if skill.effect_sprite == null or not is_instance_valid(target):
+		return
+	var spr := AnimatedSprite2D.new()
+	spr.sprite_frames = _slice_frames(skill.effect_sprite, skill.effect_hframes, skill.effect_vframes, skill.effect_fps)
+	spr.animation = "play"
+	spr.global_position = target.global_position
+	spr.z_index = 100
+	get_tree().current_scene.add_child(spr)
+	spr.play("play")
+	await spr.animation_finished
+	spr.queue_free()
+
+## PROJECTILE skills only: flies skill.projectile_sprite from `from_pos` to `to_pos`
+## (rotated to face the direction of travel -- draw the sprite facing RIGHT), then
+## frees itself. No-op if the skill has no projectile sprite set (silent, instant).
+func _play_projectile(skill: SkillData, from_pos: Vector2, to_pos: Vector2) -> void:
+	if skill.projectile_sprite == null:
+		return
+	var spr := AnimatedSprite2D.new()
+	spr.sprite_frames = _slice_frames(skill.projectile_sprite, skill.projectile_hframes, skill.projectile_vframes, skill.projectile_fps)
+	spr.animation = "play"
+	spr.sprite_frames.set_animation_loop("play", true)   # keep animating for the whole flight
+	spr.global_position = from_pos
+	spr.rotation = (to_pos - from_pos).angle()
+	spr.z_index = 100
+	get_tree().current_scene.add_child(spr)
+	spr.play("play")
+	var dist: float = from_pos.distance_to(to_pos)
+	var dur: float = clampf(dist / maxf(skill.projectile_speed, 1.0), 0.05, 1.5)
+	var tw := create_tween()
+	tw.tween_property(spr, "global_position", to_pos, dur)
+	await tw.finished
+	spr.queue_free()
 
 # ---------------- Skills ----------------
 
@@ -457,12 +525,19 @@ func _execute_skill(actor: Node2D, action: BattleAction) -> void:
 			hit.append(u)
 	print(actor.name, " uses ", skill.display_name, " on ", hit.size(), " target(s)")
 
+	if skill.category == SkillData.Category.PHYSICAL:
+		var aim: Vector2 = (cell_to_world(action.skill_target_cell) - actor.global_position)
+		if actor.has_method("play_attack"):
+			await actor.play_attack(aim)
+	if skill.shape == SkillData.Shape.PROJECTILE and not cells.is_empty():
+		await _play_projectile(skill, actor.global_position, cell_to_world(cells.back()))
 	await _play_skill_placeholder(skill, hit)
 	skill_used.emit(actor, skill, cells, hit)
 
 	for t in hit:
 		if not _is_live(t):
 			continue
+		_spawn_skill_effect(skill, t)   # visual only; fire-and-forget
 		if skill.power > 0.0:
 			var total: float = actor.get_effective_stat(StatusEffect.StatType.ATK) * skill.power \
 				+ actor.get_effective_stat(StatusEffect.StatType.SPD) * skill.spd_scale
@@ -471,6 +546,18 @@ func _execute_skill(actor: Node2D, action: BattleAction) -> void:
 					t.take_damage(int(total / skill.hits), actor, skill.def_pierce)
 		if skill.effect and _is_live(t):
 			t.apply_status_effect(skill.effect)
+
+	# PROJECTILE explosion: everyone else within splash_radius of the impact point
+	# takes splash_power x the normal hit (the primary target(s) above already got the full hit).
+	if skill.shape == SkillData.Shape.PROJECTILE and skill.splash_radius > 0 and not cells.is_empty():
+		var impact: Vector2i = cells.back()
+		var total: float = actor.get_effective_stat(StatusEffect.StatType.ATK) * skill.power \
+			+ actor.get_effective_stat(StatusEffect.StatType.SPD) * skill.spd_scale
+		for u in units:
+			if _is_live(u) and not hit.has(u) and _matches_side(actor, u, skill) \
+					and _manhattan(world_to_cell(u.global_position), impact) <= skill.splash_radius:
+				_spawn_skill_effect(skill, u)
+				u.take_damage(int(total * skill.splash_power), actor, skill.def_pierce)
 
 	if skill.pull > 0:
 		var center: Vector2i = action.skill_target_cell if skill.cast_range > 0 else origin

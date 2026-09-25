@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://biatrb08wvrtw"]
+
+[ext_resource type="Script" uid="uid://7bu3ymqqprjr" path="res://Scripts/resources/SkillData.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dkxrmtmaiorx6" path="res://Assets/Effect/00.png" id="1_3wa6y"]
+[ext_resource type="Texture2D" uid="uid://b27bhhamjsq5j" path="res://Assets/icon/64x64.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
+atlas = ExtResource("1_3wa6y")
+region = Rect2(0, 128, 1152, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr0x4"]
+atlas = ExtResource("2")
+region = Rect2(192, 2880, 64, 64)
+
+[resource]
+script = ExtResource("1")
+id = "zornhau"
+display_name = "Zornhau"
+description = "Wrath cut, a strong diagonal strike on an adjacent enemy."
+power = 1.6
+weapon = "longsword"
+icon = SubResource("AtlasTexture_jr0x4")
+effect_sprite = SubResource("AtlasTexture_xrivr")
+effect_hframes = 18
+effect_fps = 24.0

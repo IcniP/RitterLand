@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://ci6unovp2d5ib"]
+
+[ext_resource type="Script" uid="uid://7bu3ymqqprjr" path="res://Scripts/resources/SkillData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = "crimson_finale"
+display_name = "Crimson Finale"
+description = "Lan's ultimate."
+shape = 1
+min_level = 3
+sp_cost = 0
+ap_cost = 2
+power = 4.0
+cast_range = 4
+radius = 2
+charge_gain = 0.0
+is_ultimate = true

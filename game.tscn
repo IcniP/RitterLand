@@ -263,10 +263,10 @@ position = Vector2(432, 104)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Marker2D" type="Marker2D" parent="CombatZone" unique_id=1531056312]
-position = Vector2(399, 30)
+position = Vector2(406, 112)
 
 [node name="Marker2D2" type="Marker2D" parent="CombatZone" unique_id=1128052015]
-position = Vector2(469, 30)
+position = Vector2(457, 113)
 
 [node name="PartyRoster" type="Node" parent="." unique_id=1898259081]
 script = ExtResource("30_roster")
